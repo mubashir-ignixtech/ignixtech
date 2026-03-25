@@ -17,9 +17,11 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
+
+    console.log(process.env.NEXT_PUBLIC_WEB3FORMS_KEY)
     
     const formData = new FormData(e.currentTarget)
-    formData.append("access_key", process.env.WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE")
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE")
     
     try {
       const response = await fetch("https://api.web3forms.com/submit", {

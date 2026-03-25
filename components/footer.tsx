@@ -4,6 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
+import { contactDetails } from "@/lib/constants"
 
 const footerLinks = {
   company: [
@@ -20,8 +21,9 @@ const footerLinks = {
     { label: "Cybersecurity", href: "/services#cybersecurity" },
   ],
   contact: [
-    { icon: Mail, label: "info@ignixtech.ca", href: "mailto:info@ignixtech.ca" },
-    { icon: MapPin, label: "Toronto, Canada", href: "#" },
+    { icon: Mail, label: contactDetails.email, href: `mailto:${contactDetails.email}` },
+    { icon: Phone, label: contactDetails.phone, href: `tel:${contactDetails.phone}` },
+    { icon: MapPin, label: contactDetails.address, href: contactDetails.mapLink },
   ],
 }
 
@@ -96,12 +98,16 @@ export function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm inline-flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-start gap-2"
                   >
-                    <item.icon size={16} className="text-primary" />
-                    {item.label}
+                    <item.icon size={16} className="text-primary shrink-0 mt-0.5" />
+                    <span>
+                      {item.label}
+                    </span>
                   </a>
-                </li>
+                </li>              
               ))}
             </ul>
           </div>

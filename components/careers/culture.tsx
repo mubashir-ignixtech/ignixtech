@@ -3,43 +3,20 @@
 import { motion } from "framer-motion"
 import { FadeIn } from "@/components/motion"
 import { SectionHeader } from "@/components/section-header"
-import { Sparkles, Users, Rocket, Heart } from "lucide-react"
-
-const culturePoints = [
-  {
-    icon: Sparkles,
-    title: "Innovation First",
-    description: "We encourage creative thinking and embrace new ideas. Every team member has the opportunity to contribute to groundbreaking projects.",
-  },
-  {
-    icon: Users,
-    title: "Collaborative Environment",
-    description: "Work alongside talented professionals in a supportive, team-oriented culture where knowledge sharing is valued.",
-  },
-  {
-    icon: Rocket,
-    title: "Growth Opportunities",
-    description: "We invest in your professional development with training, mentorship, and clear career progression paths.",
-  },
-  {
-    icon: Heart,
-    title: "Work-Life Balance",
-    description: "Flexible working arrangements and a culture that respects your personal time and well-being.",
-  },
-]
+import { careersContent } from "@/lib/constants"
 
 export function Culture() {
   return (
     <section className="py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Our Culture"
-          title="Why Join IgnixTech?"
-          description="More than just a workplace - we are a community of innovators, creators, and problem-solvers."
+          badge={careersContent.culture.badge}
+          title={careersContent.culture.title}
+          description={careersContent.culture.description}
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
-          {culturePoints.map((point, index) => (
+          {careersContent.culture.points.map((point, index) => (
             <FadeIn key={point.title} delay={index * 0.1}>
               <motion.div
                 whileHover={{ scale: 1.02 }}

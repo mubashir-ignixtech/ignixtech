@@ -164,7 +164,7 @@ export function TextReveal({ children, className, delay = 0 }: TextRevealProps) 
 }
 
 interface FloatingProps {
-  children: ReactNode
+  children?: ReactNode
   className?: string
   duration?: number
   distance?: number

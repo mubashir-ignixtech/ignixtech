@@ -7,13 +7,7 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
-]
+import { navLinks, siteConfig } from "@/lib/constants"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -67,7 +61,7 @@ export function Navbar() {
 
             <div className="hidden md:flex items-center gap-4">
               <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link href="/contact">Get Started</Link>
+                <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer">Get Started</a>
               </Button>
             </div>
 
@@ -116,9 +110,9 @@ export function Navbar() {
                 transition={{ delay: navLinks.length * 0.1 }}
               >
                 <Button asChild size="lg" className="bg-primary text-primary-foreground mt-4">
-                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                     Get Started
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </nav>

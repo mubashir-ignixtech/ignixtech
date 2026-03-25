@@ -5,15 +5,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/motion"
-
-const highlights = [
-  "User-Centric Design Approach",
-  "Scalable & Secure Solutions",
-  "Agile Development Process",
-  "24/7 Support & Maintenance",
-  "Industry Best Practices",
-  "Continuous Innovation",
-]
+import { homeContent } from "@/lib/constants"
 
 export function AboutPreview() {
   return (
@@ -24,26 +16,25 @@ export function AboutPreview() {
           <div>
             <FadeIn>
               <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20 mb-6">
-                About Us
+                {homeContent.aboutPreview.badge}
               </span>
             </FadeIn>
             
             <FadeIn delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
-                From Concept to Impact, We Ignite It All
+                {homeContent.aboutPreview.heading}
               </h2>
             </FadeIn>
             
             <FadeIn delay={0.2}>
               <p className="mt-6 text-lg text-muted-foreground">
-                At IgnixTech, we are passionate about transforming innovative ideas into powerful digital solutions. 
-                With a team of experienced developers, designers, and strategists, we deliver excellence at every step.
+                {homeContent.aboutPreview.description}
               </p>
             </FadeIn>
             
             <FadeIn delay={0.3}>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {highlights.map((item, index) => (
+                {homeContent.aboutPreview.highlights.map((item, index) => (
                   <motion.div
                     key={item}
                     initial={{ opacity: 0, x: -20 }}
@@ -77,12 +68,7 @@ export function AboutPreview() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
               <div className="relative bg-secondary/30 rounded-3xl border border-border/50 p-8 backdrop-blur-sm">
                 <div className="grid grid-cols-2 gap-4 auto-rows-fr mb-6">
-                  {[
-                    { value: "100%", label: "Client Satisfaction" },
-                    { value: "50+", label: "Projects Completed" },
-                    { value: "5+", label: "Years of Experience" },
-                    { value: "24/7", label: "Support Available" },
-                  ].map((stat, index) => (
+                  {homeContent.aboutPreview.stats.map((stat, index) => (
                     <motion.div
                       key={stat.label}
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -106,15 +92,15 @@ export function AboutPreview() {
                   className="mt-6 p-5 rounded-2xl bg-background/50 border border-border/30 hover:border-primary/30 transition-colors"
                 >
                   <p className="text-sm text-muted-foreground italic leading-relaxed">
-                    &ldquo;At IgnixTech, we believe in transforming visions into reality through innovation and excellence.&rdquo;
+                    &ldquo;{homeContent.aboutPreview.ceoQuote.quote}&rdquo;
                   </p>
                   <div className="mt-4 flex items-center gap-3">
                     <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary font-semibold">RS</span>
+                      <span className="text-primary font-semibold">{homeContent.aboutPreview.ceoQuote.initials}</span>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-foreground">Rizwan Saieed</div>
-                      <div className="text-xs text-muted-foreground">Co-Founder & CEO</div>
+                      <div className="text-sm font-semibold text-foreground">{homeContent.aboutPreview.ceoQuote.name}</div>
+                      <div className="text-xs text-muted-foreground">{homeContent.aboutPreview.ceoQuote.title}</div>
                     </div>
                   </div>
                 </motion.div>

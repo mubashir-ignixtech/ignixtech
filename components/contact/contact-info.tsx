@@ -2,44 +2,37 @@
 
 import { motion } from "framer-motion"
 import { FadeIn } from "@/components/motion"
-import { Mail, MapPin, Clock, ArrowRight } from "lucide-react"
+import { Mail, MapPin, Clock, ArrowRight, Phone } from "lucide-react"
+import { contactDetails as contactDetailsData, contactContent } from "@/lib/constants"
 
 const contactDetails = [
   {
     icon: Mail,
     title: "Email Us",
     description: "Our team is here to help.",
-    value: "info@ignixtech.ca",
-    href: "mailto:info@ignixtech.ca",
+    value: contactDetailsData.email,
+    href: `mailto:${contactDetailsData.email}`,
   },
   {
     icon: MapPin,
     title: "Visit Us",
     description: "Come say hello at our office.",
-    value: "Toronto, Canada",
-    href: "#",
+    value: contactDetailsData.address,
+    href: contactDetailsData.mapLink,
+  },
+  {
+    icon: Phone,
+    title: "Call Us",
+    description: "Our team is here to help.",
+    value: contactDetailsData.phone,
+    href: `tel:${contactDetailsData.phone}`,
   },
   {
     icon: Clock,
-    title: "Business Hours",
-    description: "We are available",
-    value: "Mon - Fri, 9AM - 6PM EST",
+    title: contactContent.info.businessHours.title,
+    description: contactContent.info.businessHours.description,
+    value: contactContent.info.businessHours.value,
     href: null,
-  },
-]
-
-const faqs = [
-  {
-    question: "How long does a typical project take?",
-    answer: "Project timelines vary based on scope, but most projects take 4-12 weeks from start to delivery.",
-  },
-  {
-    question: "Do you offer ongoing support?",
-    answer: "Yes! We offer comprehensive maintenance and support packages for all our clients.",
-  },
-  {
-    question: "What is your development process?",
-    answer: "We follow an agile methodology with regular sprints, demos, and continuous communication.",
   },
 ]
 
@@ -50,7 +43,7 @@ export function ContactInfo() {
       <FadeIn direction="right">
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground">
-            Get in Touch
+            {contactContent.info.title}
           </h2>
           
           {contactDetails.map((detail, index) => (
@@ -73,6 +66,8 @@ export function ContactInfo() {
                 {detail.href ? (
                   <a
                     href={detail.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary hover:underline inline-flex items-center gap-1 mt-1"
                   >
                     {detail.value}
@@ -91,11 +86,11 @@ export function ContactInfo() {
       <FadeIn direction="right" delay={0.3}>
         <div className="bg-card rounded-2xl border border-border p-6">
           <h2 className="text-xl font-bold text-foreground mb-4">
-            Frequently Asked Questions
+            {contactContent.faq.title}
           </h2>
           
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
+            {contactContent.faq.list.map((faq, index) => (
               <motion.div
                 key={faq.question}
                 initial={{ opacity: 0, y: 10 }}
@@ -121,7 +116,7 @@ export function ContactInfo() {
           <div className="absolute inset-0 bg-secondary flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-              <p className="text-muted-foreground">Toronto, Canada</p>
+              <p className="text-muted-foreground">{contactContent.info.mapAddress}</p>
             </div>
           </div>
         </div>

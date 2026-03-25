@@ -1,6 +1,7 @@
 "use client"
 
 import { FadeIn, Floating } from "@/components/motion"
+import { careersContent } from "@/lib/constants"
 
 export function CareersHero() {
   return (
@@ -14,21 +15,20 @@ export function CareersHero() {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20 mb-6">
-              Careers at IgnixTech
+              {careersContent.hero.badge}
             </span>
           </FadeIn>
           
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-              Build the Future
-              <span className="text-primary"> With Us</span>
+              {careersContent.hero.heading1}
+              <span className="text-primary">{careersContent.hero.heading2}</span>
             </h1>
           </FadeIn>
           
           <FadeIn delay={0.2}>
             <p className="mt-6 text-lg text-muted-foreground text-pretty">
-              Join a team of passionate innovators dedicated to creating impactful 
-              digital solutions. We are always looking for talented individuals who share our vision.
+              {careersContent.hero.description}
             </p>
           </FadeIn>
         </div>

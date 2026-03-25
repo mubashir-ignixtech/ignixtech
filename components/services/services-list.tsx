@@ -2,101 +2,15 @@
 
 import { motion } from "framer-motion"
 import { FadeIn } from "@/components/motion"
-import { Palette, Code, Smartphone, Shield, Server, Bug, CheckCircle2 } from "lucide-react"
-
-const services = [
-  {
-    id: "uiux",
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Create stunning, intuitive interfaces that delight users and drive engagement. Our design process focuses on understanding your users and crafting experiences that convert.",
-    features: [
-      "User-Centric Design",
-      "Wireframing and Prototyping",
-      "Visual Design",
-      "Interaction Design",
-      "Usability Testing",
-      "Design Systems",
-    ],
-  },
-  {
-    id: "software",
-    icon: Code,
-    title: "Software Development",
-    description: "Build powerful, scalable software solutions tailored to your unique business requirements. We use modern technologies and best practices to deliver robust applications.",
-    features: [
-      "Custom Software Development",
-      "Web Application Development",
-      "API Development & Integration",
-      "Enterprise Solutions",
-      "Legacy System Modernization",
-      "Cloud-Native Applications",
-    ],
-  },
-  {
-    id: "mobile",
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Reach your customers wherever they are with native and cross-platform mobile applications that deliver exceptional user experiences.",
-    features: [
-      "iOS Development (Swift)",
-      "Android Development (Kotlin)",
-      "React Native Apps",
-      "Flutter Development",
-      "App Store Optimization",
-      "Mobile App Maintenance",
-    ],
-  },
-  {
-    id: "qa",
-    icon: Bug,
-    title: "Quality Assurance",
-    description: "Ensure your software performs flawlessly with comprehensive testing services. We catch bugs before your users do, guaranteeing reliable and high-quality products.",
-    features: [
-      "Manual Testing",
-      "Functional Testing",
-      "Automation Testing",
-      "Performance Testing",
-      "Security Testing",
-      "Regression Testing",
-    ],
-  },
-  {
-    id: "devops",
-    icon: Server,
-    title: "DevOps",
-    description: "Accelerate your development cycles and improve deployment reliability with our DevOps expertise. We help you build efficient, automated pipelines.",
-    features: [
-      "Infrastructure as Code (IaC)",
-      "CI/CD Pipeline Implementation",
-      "Monitoring and Logging",
-      "Cloud Infrastructure Setup",
-      "Container Orchestration",
-      "Site Reliability Engineering",
-    ],
-  },
-  {
-    id: "cybersecurity",
-    icon: Shield,
-    title: "Cybersecurity",
-    description: "Protect your digital assets with comprehensive security services. We identify vulnerabilities and implement robust security measures to keep your business safe.",
-    features: [
-      "Penetration Testing",
-      "Red Teaming",
-      "Endpoint Security",
-      "Security Audits",
-      "Compliance Implementation",
-      "Incident Response",
-    ],
-  },
-]
+import { CheckCircle2 } from "lucide-react"
+import { servicesContent } from "@/lib/constants"
 
 export function ServicesList() {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-24">
-          {services.map((service, index) => (
+          {servicesContent.list.map((service, index) => (
             <FadeIn key={service.id} delay={0.1}>
               <div
                 id={service.id}

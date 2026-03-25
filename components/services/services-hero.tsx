@@ -1,6 +1,7 @@
 "use client"
 
 import { FadeIn, Floating } from "@/components/motion"
+import { servicesContent } from "@/lib/constants"
 
 export function ServicesHero() {
   return (
@@ -14,21 +15,20 @@ export function ServicesHero() {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20 mb-6">
-              Our Services
+              {servicesContent.hero.badge}
             </span>
           </FadeIn>
           
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-              Tailored Solutions for
-              <span className="text-primary"> Every Tech Need</span>
+              {servicesContent.hero.heading1}
+              <span className="text-primary">{servicesContent.hero.heading2}</span>
             </h1>
           </FadeIn>
           
           <FadeIn delay={0.2}>
             <p className="mt-6 text-lg text-muted-foreground text-pretty">
-              From design to deployment, we offer comprehensive services to help 
-              your business thrive in the digital landscape.
+              {servicesContent.hero.description}
             </p>
           </FadeIn>
         </div>

@@ -3,28 +3,7 @@
 import { motion } from "framer-motion"
 import { SectionHeader } from "@/components/section-header"
 import { StaggerContainer, StaggerItem } from "@/components/motion"
-import { Search, Lightbulb, Rocket } from "lucide-react"
-
-const steps = [
-  {
-    number: "01",
-    icon: Search,
-    title: "Schedule Consultation",
-    description: "Discuss your needs with our expert team today and get started on your digital transformation journey.",
-  },
-  {
-    number: "02",
-    icon: Lightbulb,
-    title: "Tailored Strategy",
-    description: "Receive a customized plan designed for success, aligned with your business goals and industry requirements.",
-  },
-  {
-    number: "03",
-    icon: Rocket,
-    title: "Seamless Execution",
-    description: "Our team delivers high-quality solutions on time, ensuring smooth deployment and ongoing support.",
-  },
-]
+import { homeContent } from "@/lib/constants"
 
 export function ProcessSection() {
   return (
@@ -33,20 +12,20 @@ export function ProcessSection() {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Our Process"
-          title="How to Get Started"
-          description="Trusted by industry leaders - a simple, proven process designed to deliver results."
+          badge={homeContent.process.badge}
+          title={homeContent.process.title}
+          description={homeContent.process.description}
         />
 
         <StaggerContainer className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr">
-          {steps.map((step, index) => (
+          {homeContent.process.steps.map((step, index) => (
             <StaggerItem key={step.number}>
               <motion.div
                 whileHover={{ y: -5 }}
                 className="relative group"
               >
                 {/* Connector Line */}
-                {index < steps.length - 1 && (
+                {index < homeContent.process.steps.length - 1 && (
                   <div className="hidden md:block absolute top-16 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-gradient-to-r from-primary/50 to-transparent" />
                 )}
                 

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Send, CheckCircle2 } from "lucide-react"
+import { contactContent } from "@/lib/constants"
 
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -34,17 +35,17 @@ export function ContactForm() {
             <CheckCircle2 className="w-8 h-8 text-primary" />
           </div>
           <h3 className="text-2xl font-bold text-foreground mb-3">
-            Message Sent!
+            {contactContent.form.successTitle}
           </h3>
           <p className="text-muted-foreground mb-6">
-            Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+            {contactContent.form.successDescription}
           </p>
           <Button
             onClick={() => setIsSubmitted(false)}
             variant="outline"
             className="border-primary text-primary hover:bg-primary/10"
           >
-            Send Another Message
+            {contactContent.form.buttonRetry}
           </Button>
         </motion.div>
       </FadeIn>
@@ -55,7 +56,7 @@ export function ContactForm() {
     <FadeIn>
       <div className="bg-card rounded-2xl border border-border p-8">
         <h2 className="text-2xl font-bold text-foreground mb-6">
-          Send us a Message
+          {contactContent.form.title}
         </h2>
         
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -134,7 +135,7 @@ export function ContactForm() {
               />
             ) : (
               <>
-                Send Message
+                {contactContent.form.buttonText}
                 <Send className="w-4 h-4 ml-2" />
               </>
             )}

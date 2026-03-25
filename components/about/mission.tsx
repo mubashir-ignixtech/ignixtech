@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { FadeIn } from "@/components/motion"
-import { Target, Eye, Heart } from "lucide-react"
+import { aboutContent } from "@/lib/constants"
 
 export function Mission() {
   return (
@@ -13,50 +13,22 @@ export function Mission() {
           <div>
             <FadeIn>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-                Our Story
+                {aboutContent.mission.title}
               </h2>
             </FadeIn>
             
             <FadeIn delay={0.1}>
               <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Founded with a vision to bridge the gap between innovative ideas and 
-                  technological excellence, IgnixTech has grown into a trusted partner 
-                  for businesses seeking digital transformation.
-                </p>
-                <p>
-                  Our journey began with a simple belief: that technology should empower, 
-                  not complicate. This philosophy drives everything we do, from our approach 
-                  to software development to how we engage with our clients.
-                </p>
-                <p>
-                  Today, we are proud to have helped numerous businesses across various 
-                  industries achieve their digital goals, delivering solutions that are 
-                  not just functional but transformative.
-                </p>
+                {aboutContent.mission.story.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
               </div>
             </FadeIn>
           </div>
           
           {/* Mission, Vision, Values Cards */}
           <div className="space-y-6">
-            {[
-              {
-                icon: Target,
-                title: "Our Mission",
-                description: "To deliver innovative digital solutions that empower businesses to achieve their goals and drive meaningful impact in their industries.",
-              },
-              {
-                icon: Eye,
-                title: "Our Vision",
-                description: "To be the leading technology partner for businesses worldwide, known for excellence, innovation, and unwavering commitment to client success.",
-              },
-              {
-                icon: Heart,
-                title: "Our Values",
-                description: "Integrity, Innovation, Excellence, and Client-Centricity form the foundation of everything we do at IgnixTech.",
-              },
-            ].map((item, index) => (
+            {aboutContent.mission.cards.map((item, index) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, x: 50 }}

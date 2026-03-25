@@ -4,38 +4,20 @@ import { motion } from "framer-motion"
 import { SectionHeader } from "@/components/section-header"
 import { StaggerContainer, StaggerItem } from "@/components/motion"
 import { Linkedin, Twitter } from "lucide-react"
-
-const team = [
-  {
-    name: "Rizwan Saieed",
-    role: "Co-Founder & CEO",
-    bio: "Visionary leader driving innovation and excellence at IgnixTech.",
-    initials: "RS",
-    linkedin: "https://www.linkedin.com/in/rizwan-saieed-mohammed-saieed-891b211a2/",
-    twitter: "#",
-  },
-  {
-    name: "Muhammad Raza Aslam",
-    role: "Chief Technology Officer",
-    bio: "Architect of scalable solutions with deep technical expertise.",
-    initials: "RA",
-    linkedin: "https://www.linkedin.com/in/muhammad-raza-aslam-21882b75/",
-    twitter: "#",
-  }
-]
+import { aboutContent } from "@/lib/constants"
 
 export function Team() {
   return (
     <section className="py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Our Team"
-          title="Meet the Leadership"
-          description="Dedicated professionals committed to delivering excellence."
+          badge={aboutContent.team.badge}
+          title={aboutContent.team.title}
+          description={aboutContent.team.description}
         />
 
         <StaggerContainer className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 auto-rows-fr">
-          {team.map((member) => (
+          {aboutContent.team.members.map((member) => (
             <StaggerItem key={member.name}>
               <motion.div
                 whileHover={{ y: -5 }}

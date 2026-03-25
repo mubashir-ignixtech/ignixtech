@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FadeIn, Floating } from "@/components/motion"
+import { homeContent, siteConfig } from "@/lib/constants"
 
 export function HeroSection() {
   return (
@@ -24,29 +25,28 @@ export function HeroSection() {
           <div className="text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8">
-              <span>Engineering the Digital Future</span>
+              <span>{homeContent.hero.badge}</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-balance">
-              Ignite Your Ideas
+              {homeContent.hero.heading1}
               <br />
-              <span className="text-primary">Transform Your Future</span>
+              <span className="text-primary">{homeContent.hero.heading2}</span>
             </h1>
 
             {/* Subheading */}
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 text-pretty">
-              We revolutionize industries with dynamic digital solutions, tailored to meet 
-              contemporary demands and drive impactful transformations for businesses of all sectors.
+              {homeContent.hero.description}
             </p>
 
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base">
-                <Link href="/contact">
+                <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer">
                   Get in Touch
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-border hover:bg-secondary h-12 px-8 text-base">
                 <Link href="/services">
@@ -58,12 +58,7 @@ export function HeroSection() {
             {/* Stats */}
             <FadeIn delay={0.4}>
               <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl mx-auto lg:mx-0">
-                {[
-                  { value: "50+", label: "Projects" },
-                  { value: "30+", label: "Clients" },
-                  { value: "5+", label: "Years" },
-                  { value: "15+", label: "Experts" },
-                ].map((stat, index) => (
+                {homeContent.hero.stats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}

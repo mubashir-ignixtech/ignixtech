@@ -6,45 +6,7 @@ import { ArrowRight, Palette, Code, Smartphone, Shield, Server, Bug } from "luci
 import { Button } from "@/components/ui/button"
 import { SectionHeader } from "@/components/section-header"
 import { StaggerContainer, StaggerItem, GlowCard } from "@/components/motion"
-
-const services = [
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "User-centric design solutions with wireframing, prototyping, visual design, and usability testing.",
-    features: ["User Research", "Wireframing", "Prototyping", "Visual Design"],
-  },
-  {
-    icon: Code,
-    title: "Software Development",
-    description: "Custom software and web application development tailored to your business needs.",
-    features: ["Custom Software", "Web Apps", "API Integration", "Scalable Solutions"],
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications for Android and iOS platforms.",
-    features: ["iOS Development", "Android Development", "Cross-Platform", "App Store Optimization"],
-  },
-  {
-    icon: Bug,
-    title: "Quality Assurance",
-    description: "Comprehensive testing services including manual, functional, automation, and performance testing.",
-    features: ["Manual Testing", "Automation", "Performance", "Security Testing"],
-  },
-  {
-    icon: Server,
-    title: "DevOps",
-    description: "Infrastructure as code, CI/CD pipeline implementation, and monitoring solutions.",
-    features: ["CI/CD Pipelines", "Cloud Infrastructure", "Monitoring", "Deployment Automation"],
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity",
-    description: "Penetration testing, red teaming, and endpoint security to protect your digital assets.",
-    features: ["Penetration Testing", "Red Teaming", "Endpoint Security", "Compliance"],
-  },
-]
+import { homeContent } from "@/lib/constants"
 
 export function ServicesPreview() {
   return (
@@ -53,14 +15,14 @@ export function ServicesPreview() {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Services"
-          title="Unleash Your Potential With Our Tailored Solutions"
-          description="Comprehensive tech solutions for your every need, from design to deployment and beyond."
+          badge={homeContent.servicesPreview.badge}
+          title={homeContent.servicesPreview.title}
+          description={homeContent.servicesPreview.description}
         />
 
         <StaggerContainer className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {services.map((service, index) => (
-            <StaggerItem key={service.title} delay={index * 0.05}>
+          {homeContent.servicesPreview.services.map((service, index) => (
+            <StaggerItem key={service.title}>
               <GlowCard className="h-full flex flex-col">
                 <div className="p-7 flex flex-col h-full">
                   <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center mb-5">

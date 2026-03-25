@@ -13,69 +13,7 @@ import {
   ArrowRight,
   Mail
 } from "lucide-react"
-
-const jobs = [
-  {
-    id: 1,
-    title: "Senior Frontend Developer",
-    department: "Engineering",
-    location: "Remote / Toronto",
-    type: "Full-time",
-    description: "We are looking for an experienced Frontend Developer to join our engineering team. You will be working on cutting-edge web applications using React, Next.js, and TypeScript.",
-    requirements: [
-      "5+ years of experience with React/Next.js",
-      "Strong TypeScript skills",
-      "Experience with modern CSS and Tailwind",
-      "Understanding of web performance optimization",
-      "Excellent communication skills",
-    ],
-  },
-  {
-    id: 2,
-    title: "UI/UX Designer",
-    department: "Design",
-    location: "Remote / Toronto",
-    type: "Full-time",
-    description: "Join our design team to create beautiful, user-centered interfaces. You will be responsible for the entire design process from research to high-fidelity prototypes.",
-    requirements: [
-      "3+ years of UI/UX design experience",
-      "Proficiency in Figma and design systems",
-      "Strong portfolio demonstrating user-centered design",
-      "Experience with user research and testing",
-      "Excellent visual design skills",
-    ],
-  },
-  {
-    id: 3,
-    title: "DevOps Engineer",
-    department: "Infrastructure",
-    location: "Remote",
-    type: "Full-time",
-    description: "Help us build and maintain robust infrastructure. You will work on CI/CD pipelines, cloud architecture, and ensure our systems are secure and scalable.",
-    requirements: [
-      "4+ years of DevOps experience",
-      "Strong knowledge of AWS/GCP/Azure",
-      "Experience with Docker and Kubernetes",
-      "Infrastructure as Code (Terraform)",
-      "Strong scripting skills (Python/Bash)",
-    ],
-  },
-  {
-    id: 4,
-    title: "Mobile Developer",
-    department: "Engineering",
-    location: "Remote / Toronto",
-    type: "Full-time",
-    description: "Build beautiful, performant mobile applications for iOS and Android. You will work with React Native and native technologies to deliver exceptional user experiences.",
-    requirements: [
-      "3+ years of mobile development experience",
-      "Proficiency in React Native or Flutter",
-      "Experience with native iOS/Android development",
-      "Understanding of mobile UI/UX best practices",
-      "App Store deployment experience",
-    ],
-  },
-]
+import { jobs } from "@/lib/constants"
 
 export function JobListings() {
   const [expandedJob, setExpandedJob] = useState<number | null>(null)
@@ -90,11 +28,16 @@ export function JobListings() {
         />
 
         <div className="mt-16 space-y-4">
-          {jobs.map((job, index) => (
-            <FadeIn key={job.id} delay={index * 0.1}>
-              <motion.div
-                layout
-                className="bg-background rounded-xl border border-border overflow-hidden"
+          {jobs.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No open positions at the moment. Please check back later.</p>
+            </div>
+          ) : (
+            jobs.map((job, index) => (
+              <FadeIn key={job.id} delay={index * 0.1}>
+                <motion.div
+                  layout
+                  className="bg-background rounded-xl border border-border overflow-hidden"
               >
                 <button
                   onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}
@@ -164,10 +107,10 @@ export function JobListings() {
                 </AnimatePresence>
               </motion.div>
             </FadeIn>
-          ))}
+          )))}
         </div>
 
-        {/* General Application */}
+        {/* General Application
         <FadeIn delay={0.4}>
           <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border text-center">
             <h3 className="text-2xl font-bold text-foreground mb-3">
@@ -181,7 +124,7 @@ export function JobListings() {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
-        </FadeIn>
+        </FadeIn> */}
       </div>
     </section>
   )

@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FadeIn, Floating } from "@/components/motion"
+import { homeContent, siteConfig } from "@/lib/constants"
 
 export function CTASection() {
   return (
@@ -17,32 +18,31 @@ export function CTASection() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <FadeIn>
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20 mb-6">
-            Start Your Project
+            {homeContent.cta.badge}
           </span>
         </FadeIn>
         
         <FadeIn delay={0.1}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
-            Have a Project in Mind?
+            {homeContent.cta.title1}
             <br />
-            <span className="text-primary">Let&apos;s Get Started!</span>
+            <span className="text-primary">{homeContent.cta.title2}</span>
           </h2>
         </FadeIn>
         
         <FadeIn delay={0.2}>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Transform your ideas into reality with our expert team. From concept to launch, 
-            we&apos;re here to help you build something extraordinary.
+            {homeContent.cta.description}
           </p>
         </FadeIn>
         
         <FadeIn delay={0.3}>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base">
-              <Link href="/contact">
+              <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer">
                 Get in Touch
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-border hover:bg-secondary h-12 px-8 text-base">
               <Link href="/careers">
@@ -60,7 +60,7 @@ export function CTASection() {
           transition={{ delay: 0.5 }}
           className="mt-16 flex flex-wrap justify-center gap-4"
         >
-          {["Free Consultation", "No Commitment", "Expert Guidance"].map((item, index) => (
+          {homeContent.cta.tags.map((item, index) => (
             <motion.div
               key={item}
               initial={{ opacity: 0, y: 20 }}

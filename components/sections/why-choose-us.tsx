@@ -2,40 +2,7 @@
 
 import { SectionHeader } from "@/components/section-header"
 import { StaggerContainer, StaggerItem } from "@/components/motion"
-import { Zap, Target, Users, Clock, Award, HeadphonesIcon } from "lucide-react"
-
-const benefits = [
-  {
-    icon: Zap,
-    title: "Fast Delivery",
-    description: "Agile methodology ensures quick turnaround without compromising on quality.",
-  },
-  {
-    icon: Target,
-    title: "Tailored Solutions",
-    description: "Custom-built solutions designed specifically for your unique business requirements.",
-  },
-  {
-    icon: Users,
-    title: "Expert Team",
-    description: "Skilled professionals with deep expertise across multiple technologies and domains.",
-  },
-  {
-    icon: Clock,
-    title: "On-Time Delivery",
-    description: "Committed to meeting deadlines with transparent communication throughout.",
-  },
-  {
-    icon: Award,
-    title: "Quality Assured",
-    description: "Rigorous testing and QA processes to ensure bug-free, reliable software.",
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "24/7 Support",
-    description: "Round-the-clock support and maintenance to keep your systems running smoothly.",
-  },
-]
+import { homeContent } from "@/lib/constants"
 
 export function WhyChooseUs() {
   return (
@@ -45,14 +12,14 @@ export function WhyChooseUs() {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Why Choose Us"
-          title="Everything You Need to Succeed"
-          description="We combine technical excellence with strategic thinking to deliver solutions that drive real business value."
+          badge={homeContent.whyChooseUs.badge}
+          title={homeContent.whyChooseUs.title}
+          description={homeContent.whyChooseUs.description}
         />
 
         <StaggerContainer className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {benefits.map((benefit, index) => (
-            <StaggerItem key={benefit.title} delay={index * 0.05}>
+          {homeContent.whyChooseUs.benefits.map((benefit, index) => (
+            <StaggerItem key={benefit.title}>
               <div className="group flex flex-col gap-4 p-6 rounded-2xl bg-background/40 backdrop-blur-sm border border-border/50 hover:border-primary/50 hover:bg-background/60 transition-all duration-300 h-full">
                 <div className="flex-shrink-0">
                   <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors">

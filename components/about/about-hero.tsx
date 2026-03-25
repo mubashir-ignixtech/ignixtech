@@ -1,6 +1,7 @@
 "use client"
 
 import { FadeIn, Floating } from "@/components/motion"
+import { aboutContent } from "@/lib/constants"
 
 export function AboutHero() {
   return (
@@ -14,21 +15,20 @@ export function AboutHero() {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20 mb-6">
-              About IgnixTech
+              {aboutContent.hero.badge}
             </span>
           </FadeIn>
           
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-              We Ignite Innovation &
-              <span className="text-primary"> Transform Businesses</span>
+              {aboutContent.hero.heading1}
+              <span className="text-primary">{aboutContent.hero.heading2}</span>
             </h1>
           </FadeIn>
           
           <FadeIn delay={0.2}>
             <p className="mt-6 text-lg text-muted-foreground text-pretty">
-              IgnixTech is a forward-thinking technology company dedicated to delivering 
-              cutting-edge digital solutions that empower businesses to thrive in the modern era.
+              {aboutContent.hero.description}
             </p>
           </FadeIn>
         </div>

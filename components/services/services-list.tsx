@@ -21,10 +21,10 @@ export function ServicesList() {
                 {/* Content */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                      <service.icon className="w-7 h-7 text-primary" />
+                    <div className="w-14 h-14 rounded-lg bg-teal-100 flex items-center justify-center">
+                      <service.icon className="w-7 h-7 text-teal-600" />
                     </div>
-                    <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                    <span className="text-sm font-semibold text-teal-600 uppercase tracking-wider">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -47,8 +47,8 @@ export function ServicesList() {
                         transition={{ delay: featureIndex * 0.1 }}
                         className="flex items-center gap-2"
                       >
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-foreground">{feature}</span>
+                        <CheckCircle2 className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                        <span className="text-gray-800">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -63,10 +63,8 @@ export function ServicesList() {
                     transition={{ delay: 0.2 }}
                     className="relative"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-2xl" />
-                    <div className="relative bg-card rounded-3xl border border-border p-8 aspect-square flex items-center justify-center">
-                      <service.icon className="w-32 h-32 text-primary/20" />
-                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent rounded-3xl" />
+                    <div className="relative bg-teal-100 rounded-2xl p-12 aspect-square flex items-center justify-center">
+                      <service.icon className="w-32 h-32 text-teal-400 opacity-50" />
                     </div>
                   </motion.div>
                 </div>

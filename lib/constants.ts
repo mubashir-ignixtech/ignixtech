@@ -13,7 +13,7 @@ export const contactDetails = {
     email: "contact@ignixtech.ca",
     phone: "+1 (902) 707-6161",
     address: "299 Gary Martin Drive Bedford, Halifax, NS, Canada B4B 2E9",
-    mapLink: "https://www.google.com/maps/place/299+Gary+Martin+Dr,+Bedford,+NS+B4B+2E9,+Canada/data=!4m2!3m1!1s0x4b5989808ea44b81:0x4ce22e7f81c7bc9?sa=X&ved=1t:242&ictx=111",
+    mapLink: "https://maps.app.goo.gl/kJD8FZBTDUuDtGiVA",
 }
 
 export const navLinks = [
@@ -59,7 +59,8 @@ export const homeContent = {
       quote: "At IgnixTech, we believe in transforming visions into reality through innovation and excellence.",
       initials: "RS",
       name: "Rizwan Saieed",
-      title: "Co-Founder & CEO"
+      title: "Co-Founder & CEO",
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQHuc5hwC0TCVQ/profile-displayphoto-shrink_200_200/B4DZQ2WZejHYAc-/0/1736078629044?e=1776297600&v=beta&t=tT1LE3ohvhfFfFKN2wKrT8V7hJ2fNs_u0MH-UjIxe3w"
     }
   },
   servicesPreview: {
@@ -240,6 +241,7 @@ export const aboutContent = {
         role: "Co-Founder & CEO",
         bio: "Visionary leader driving innovation and excellence at IgnixTech.",
         initials: "RS",
+        image: "https://media.licdn.com/dms/image/v2/D4D03AQHuc5hwC0TCVQ/profile-displayphoto-shrink_200_200/B4DZQ2WZejHYAc-/0/1736078629044?e=1776297600&v=beta&t=tT1LE3ohvhfFfFKN2wKrT8V7hJ2fNs_u0MH-UjIxe3w",
         linkedin: "https://www.linkedin.com/in/rizwan-saieed-mohammed-saieed-891b211a2/",
         twitter: "#",
       },
@@ -248,6 +250,7 @@ export const aboutContent = {
         role: "Chief Technology Officer",
         bio: "Architect of scalable solutions with deep technical expertise.",
         initials: "RA",
+        image:"https://media.licdn.com/dms/image/v2/C4D03AQHMYRUGFgl2ug/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1645974837983?e=1776297600&v=beta&t=zLMN7OLvdvHiPKovcZW_fo4nmlRLizDNMjfXAlLeo2I",
         linkedin: "https://www.linkedin.com/in/muhammad-raza-aslam-21882b75/",
         twitter: "#",
       }
@@ -400,7 +403,7 @@ export const careersContent = {
     description: "More than just a workplace - we are a community of innovators, creators, and problem-solvers.",
     points: [
       {
-        icon: Sparkles,
+        icon: Lightbulb,
         title: "Innovation First",
         description: "We encourage creative thinking and embrace new ideas. Every team member has the opportunity to contribute to groundbreaking projects.",
       },

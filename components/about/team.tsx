@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/section-header"
 import { StaggerContainer, StaggerItem } from "@/components/motion"
 import { Linkedin, Twitter } from "lucide-react"
 import { aboutContent } from "@/lib/constants"
+import Image from "next/image"
 
 export function Team() {
   return (
@@ -24,7 +25,17 @@ export function Team() {
                 className="text-center p-6 rounded-2xl bg-background border border-border hover:border-primary/50 transition-all"
               >
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">{member.initials}</span>
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.initials}
+                      width={96}
+                      height={96}
+                      className="rounded-full min-w-full min-h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-3xl font-bold text-primary">{member.initials}</span>
+                  )}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
                   {member.name}
@@ -39,9 +50,9 @@ export function Team() {
                   <a href={member.linkedin} className="text-muted-foreground hover:text-primary transition-colors">
                     <Linkedin size={18} />
                   </a>
-                  <a href={member.twitter} className="text-muted-foreground hover:text-primary transition-colors">
+                  {/* <a href={member.twitter} className="text-muted-foreground hover:text-primary transition-colors">
                     <Twitter size={18} />
-                  </a>
+                  </a> */}
                 </div>
               </motion.div>
             </StaggerItem>

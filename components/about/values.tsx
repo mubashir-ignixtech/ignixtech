@@ -2,7 +2,6 @@
 
 import { SectionHeader } from "@/components/section-header"
 import { StaggerContainer, StaggerItem } from "@/components/motion"
-import { Lightbulb, Users, Shield, Zap, Globe, Award } from "lucide-react"
 import { aboutContent } from "@/lib/constants"
 
 export function Values() {
@@ -18,7 +17,7 @@ export function Values() {
         <StaggerContainer className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
           {aboutContent.values.list.map((value) => (
             <StaggerItem key={value.title}>
-              <div className="text-center p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
+              <div className="text-center p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors h-full">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-primary" />
                 </div>

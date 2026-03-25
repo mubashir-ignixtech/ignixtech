@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -95,8 +96,18 @@ export function AboutPreview() {
                     &ldquo;{homeContent.aboutPreview.ceoQuote.quote}&rdquo;
                   </p>
                   <div className="mt-4 flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary font-semibold">{homeContent.aboutPreview.ceoQuote.initials}</span>
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-primary/20 flex items-center justify-center flex-shrink-0 border-2 border-primary/20">
+                      {homeContent.aboutPreview.ceoQuote.image ? (
+                        <Image
+                          src={homeContent.aboutPreview.ceoQuote.image}
+                          alt={homeContent.aboutPreview.ceoQuote.name}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-primary font-semibold">{homeContent.aboutPreview.ceoQuote.initials}</span>
+                      )}
                     </div>
                     <div>
                       <div className="text-sm font-semibold text-foreground">{homeContent.aboutPreview.ceoQuote.name}</div>

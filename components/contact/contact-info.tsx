@@ -110,15 +110,16 @@ export function ContactInfo() {
         </div>
       </FadeIn>
 
-      {/* Map Placeholder */}
+      {/* Google Maps Embed */}
       <FadeIn direction="right" delay={0.4}>
-        <div className="relative h-64 rounded-2xl overflow-hidden border border-border">
-          <div className="absolute inset-0 bg-secondary flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-              <p className="text-muted-foreground">{contactContent.info.mapAddress}</p>
-            </div>
-          </div>
+        <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden border border-border">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d354.37565862206196!2d-63.707623!3d44.719504!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b5989808ea44b81%3A0x4ce22e7f81c7bc9!2s299%20Gary%20Martin%20Dr%2C%20Bedford%2C%20NS%20B4B%202E9%2C%20Canada!5e0!3m2!1sen!2sus!4v1774428479842!5m2!1sen!2sus"
+            className="absolute inset-0 w-full h-full border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </FadeIn>
     </div>

@@ -14,13 +14,31 @@ export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsLoading(false)
-    setIsSubmitted(true)
+    
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", process.env.WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE")
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+      
+      const data = await response.json()
+      
+      if (data.success) {
+        setIsSubmitted(true)
+      } else {
+        console.error("Form submission failed:", data)
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   if (isSubmitted) {
@@ -65,6 +83,7 @@ export function ContactForm() {
               <Label htmlFor="firstName">First Name</Label>
               <Input
                 id="firstName"
+                name="First Name"
                 placeholder="John"
                 required
                 className="bg-background border-border"
@@ -74,6 +93,7 @@ export function ContactForm() {
               <Label htmlFor="lastName">Last Name</Label>
               <Input
                 id="lastName"
+                name="Last Name"
                 placeholder="Doe"
                 required
                 className="bg-background border-border"
@@ -85,6 +105,7 @@ export function ContactForm() {
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
+              name="Email"
               type="email"
               placeholder="john@example.com"
               required
@@ -96,6 +117,7 @@ export function ContactForm() {
             <Label htmlFor="company">Company (Optional)</Label>
             <Input
               id="company"
+              name="Company"
               placeholder="Your Company"
               className="bg-background border-border"
             />
@@ -105,6 +127,7 @@ export function ContactForm() {
             <Label htmlFor="subject">Subject</Label>
             <Input
               id="subject"
+              name="Subject"
               placeholder="How can we help?"
               required
               className="bg-background border-border"
@@ -115,6 +138,7 @@ export function ContactForm() {
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
+              name="Message"
               placeholder="Tell us about your project..."
               rows={5}
               required

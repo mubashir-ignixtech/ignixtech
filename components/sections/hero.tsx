@@ -12,12 +12,12 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-200/40 via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[rgba(244,20,31,0.1)] via-background to-background" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]" />
       
       {/* Animated Orbs */}
-      <Floating duration={4} distance={20} className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-400/25 rounded-full blur-[100px]" />
-      <Floating duration={5} distance={15} className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full blur-[120px]" />
+      <Floating duration={4} distance={20} className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full blur-[100px]" style={{ backgroundColor: "rgba(244, 20, 31, 0.2)" }} />
+      <Floating duration={5} distance={15} className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-[120px]" style={{ backgroundColor: "rgba(164, 145, 211, 0.15)" }} />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

@@ -5,18 +5,18 @@ import { StaggerContainer, StaggerItem } from "@/components/motion"
 import { homeContent } from "@/lib/constants"
 
 const benefitColors = [
-  { bg: "bg-blue-100", icon: "text-blue-700", text: "text-gray-800" },
-  { bg: "bg-teal-100", icon: "text-teal-700", text: "text-gray-800" },
-  { bg: "bg-emerald-100", icon: "text-emerald-700", text: "text-gray-800" },
-  { bg: "bg-purple-100", icon: "text-purple-700", text: "text-gray-800" },
-  { bg: "bg-violet-100", icon: "text-violet-700", text: "text-gray-800" },
-  { bg: "bg-pink-100", icon: "text-pink-700", text: "text-gray-800" },
+  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
+  { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
+  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
+  { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
 ]
 
 export function WhyChooseUs() {
   return (
     <section className="py-20 sm:py-28 bg-white">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={homeContent.whyChooseUs.badge}
           title={homeContent.whyChooseUs.title}
@@ -28,14 +28,14 @@ export function WhyChooseUs() {
             const colors = benefitColors[index % benefitColors.length]
             return (
               <StaggerItem key={benefit.title}>
-                <div className={`${colors.bg} rounded-2xl p-7`}>
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-4`}>
-                    <benefit.icon className={`w-6 h-6 ${colors.icon}`} />
+                <div className="rounded-3xl p-7 transition-all" style={{ backgroundColor: colors.bg }}>
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: colors.icon }}>
+                    <benefit.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className={`text-base font-semibold ${colors.text} mb-2`}>
+                  <h3 className="text-base font-bold mb-2" style={{ color: colors.text }}>
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed" style={{ color: colors.text, opacity: 0.8 }}>
                     {benefit.description}
                   </p>
                 </div>

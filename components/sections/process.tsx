@@ -6,16 +6,16 @@ import { StaggerContainer, StaggerItem } from "@/components/motion"
 import { homeContent } from "@/lib/constants"
 
 const cardColors = [
-  { bg: "bg-yellow-100", icon: "text-yellow-700", text: "text-gray-800" },
-  { bg: "bg-teal-100", icon: "text-teal-700", text: "text-gray-800" },
-  { bg: "bg-violet-100", icon: "text-violet-700", text: "text-gray-800" },
-  { bg: "bg-blue-100", icon: "text-blue-700", text: "text-gray-800" },
+  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
+  { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
+  { bg: "#F5F5F5", icon: "#2B2B2B", text: "#2B2B2B" },
 ]
 
 export function ProcessSection() {
   return (
-    <section className="py-20 sm:py-28 relative overflow-hidden bg-white">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={homeContent.process.badge}
           title={homeContent.process.title}
@@ -27,16 +27,16 @@ export function ProcessSection() {
             const colors = cardColors[index % cardColors.length]
             return (
               <StaggerItem key={step.number}>
-                <motion.div whileHover={{ y: -4 }}>
-                  <div className={`${colors.bg} rounded-2xl p-8 h-full`}>
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-5`}>
-                      <step.icon className={`w-6 h-6 ${colors.icon}`} />
+                <motion.div whileHover={{ y: -6 }}>
+                  <div className="rounded-3xl p-8 h-full transition-all" style={{ backgroundColor: colors.bg }}>
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style={{ backgroundColor: colors.icon }}>
+                      <step.icon className="w-6 h-6 text-white" />
                     </div>
                     
-                    <h3 className={`text-lg font-semibold ${colors.text} mb-3`}>
+                    <h3 className="text-lg font-bold mb-3" style={{ color: colors.text }}>
                       {step.title}
                     </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-sm leading-relaxed" style={{ color: colors.text, opacity: 0.8 }}>
                       {step.description}
                     </p>
                   </div>

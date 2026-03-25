@@ -9,10 +9,10 @@ import { FadeIn } from "@/components/motion"
 import { homeContent } from "@/lib/constants"
 
 const statColors = [
-  { bg: "bg-teal-100", text: "text-teal-700" },
-  { bg: "bg-yellow-100", text: "text-yellow-700" },
-  { bg: "bg-blue-100", text: "text-blue-700" },
-  { bg: "bg-purple-100", text: "text-purple-700" },
+  { bg: "#E0F5F5", text: "#087E8B" },
+  { bg: "#FFEBEA", text: "#F4141F" },
+  { bg: "#F4EDFD", text: "#A491D3" },
+  { bg: "#F5F5F5", text: "#2B2B2B" },
 ]
 
 export function AboutPreview() {
@@ -23,19 +23,19 @@ export function AboutPreview() {
           {/* Content */}
           <div>
             <FadeIn>
-              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase bg-teal-100 text-teal-700 rounded-full mb-4">
+              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase rounded-full mb-4" style={{ backgroundColor: "#E0F5F5", color: "#087E8B" }}>
                 {homeContent.aboutPreview.badge}
               </span>
             </FadeIn>
             
             <FadeIn delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#2B2B2B" }}>
                 {homeContent.aboutPreview.heading}
               </h2>
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <p className="text-base text-gray-700 mb-8 leading-relaxed">
+              <p className="text-base mb-8 leading-relaxed" style={{ color: "#2B2B2B", opacity: 0.8 }}>
                 {homeContent.aboutPreview.description}
               </p>
             </FadeIn>
@@ -50,15 +50,15 @@ export function AboutPreview() {
                     viewport={{ once: true }}
                     className="flex items-center gap-2"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-teal-600 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: "#087E8B" }} />
+                    <span style={{ color: "#2B2B2B" }}>{item}</span>
                   </motion.div>
                 ))}
               </div>
             </FadeIn>
             
             <FadeIn delay={0.5}>
-              <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
+              <Button asChild size="lg" style={{ backgroundColor: "#087E8B" }} className="hover:opacity-90 text-white">
                 <Link href="/about">
                   Learn More About Us
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -69,7 +69,7 @@ export function AboutPreview() {
 
           {/* Stats & Quote */}
           <FadeIn direction="right" delay={0.2}>
-            <div className="bg-blue-50 rounded-2xl p-8">
+            <div className="rounded-3xl p-8" style={{ backgroundColor: "#F5F5F5" }}>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {homeContent.aboutPreview.stats.map((stat, index) => {
                   const colors = statColors[index % statColors.length]
@@ -80,10 +80,11 @@ export function AboutPreview() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 + index * 0.1 }}
-                      className={`text-center p-4 rounded-xl ${colors.bg}`}
+                      className="text-center p-4 rounded-xl transition-all"
+                      style={{ backgroundColor: colors.bg }}
                     >
-                      <div className={`text-2xl font-bold ${colors.text}`}>{stat.value}</div>
-                      <div className={`text-xs ${colors.text} opacity-75 mt-1 font-medium`}>{stat.label}</div>
+                      <div className="text-2xl font-bold" style={{ color: colors.text }}>{stat.value}</div>
+                      <div className="text-xs mt-1 font-medium" style={{ color: colors.text, opacity: 0.75 }}>{stat.label}</div>
                     </motion.div>
                   )
                 })}

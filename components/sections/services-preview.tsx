@@ -9,18 +9,18 @@ import { StaggerContainer, StaggerItem } from "@/components/motion"
 import { homeContent } from "@/lib/constants"
 
 const serviceColors = [
-  { bg: "bg-yellow-100", icon: "text-yellow-700", text: "text-gray-800" },
-  { bg: "bg-teal-100", icon: "text-teal-700", text: "text-gray-800" },
-  { bg: "bg-gray-200", icon: "text-gray-700", text: "text-gray-800" },
-  { bg: "bg-blue-100", icon: "text-blue-700", text: "text-gray-800" },
-  { bg: "bg-green-100", icon: "text-green-700", text: "text-gray-800" },
-  { bg: "bg-purple-100", icon: "text-purple-700", text: "text-gray-800" },
+  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
+  { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
+  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
+  { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
 ]
 
 export function ServicesPreview() {
   return (
     <section className="py-20 sm:py-28 bg-white">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={homeContent.servicesPreview.badge}
           title={homeContent.servicesPreview.title}
@@ -32,23 +32,23 @@ export function ServicesPreview() {
             const colors = serviceColors[index % serviceColors.length]
             return (
               <StaggerItem key={service.title}>
-                <motion.div whileHover={{ y: -4 }}>
-                  <div className={`${colors.bg} rounded-2xl p-8 h-full`}>
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-5`}>
-                      <service.icon className={`w-6 h-6 ${colors.icon}`} />
+                <motion.div whileHover={{ y: -6 }}>
+                  <div className="rounded-3xl p-8 h-full transition-all" style={{ backgroundColor: colors.bg }}>
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style={{ backgroundColor: colors.icon }}>
+                      <service.icon className="w-6 h-6 text-white" />
                     </div>
                     
-                    <h3 className={`text-lg font-semibold ${colors.text} mb-3`}>
+                    <h3 className="text-lg font-bold mb-3" style={{ color: colors.text }}>
                       {service.title}
                     </h3>
                     
-                    <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                    <p className="text-sm mb-4 leading-relaxed" style={{ color: colors.text, opacity: 0.8 }}>
                       {service.description}
                     </p>
                     
                     <div className="flex flex-wrap gap-2">
                       {service.features.slice(0, 2).map((feature) => (
-                        <span key={feature} className="text-xs px-2 py-1 bg-white/50 text-gray-700 rounded font-medium">
+                        <span key={feature} className="text-xs px-2 py-1 rounded font-medium" style={{ backgroundColor: `${colors.icon}20`, color: colors.icon }}>
                           {feature}
                         </span>
                       ))}
@@ -67,7 +67,7 @@ export function ServicesPreview() {
           transition={{ delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
+          <Button asChild size="lg" style={{ backgroundColor: "#087E8B" }} className="hover:opacity-90 text-white">
             <Link href="/services">
               See All Services
               <ArrowRight className="ml-2 h-4 w-4" />

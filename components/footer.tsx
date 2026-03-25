@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowUpRight, Mail, MapPin, Phone, Linkedin, Twitter, Instagram, Facebook } from "lucide-react"
 import Image from "next/image"
 import { contactDetails } from "@/lib/constants"
 
@@ -27,6 +27,13 @@ const footerLinks = {
   ],
 }
 
+const socialLinks = [
+  { icon: Linkedin, href: "https://www.linkedin.com/company/ignixtech/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/ignixtech1", label: "X" },
+  { icon: Instagram, href: "https://www.instagram.com/ignixtech/", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/people/Ignixtech/61573059448251/", label: "Facebook" },
+]
+
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
@@ -46,6 +53,20 @@ export function Footer() {
             <p className="mt-4 text-muted-foreground text-sm leading-relaxed">
               We revolutionize industries with dynamic digital solutions, tailored to meet contemporary demands and drive impactful transformations.
             </p>
+            <div className="mt-6 flex items-center gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                  aria-label={social.label}
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Company Links */}
@@ -119,10 +140,10 @@ export function Footer() {
             &copy; {new Date().getFullYear()} IgnixTech. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors text-sm">
               Terms of Service
             </Link>
           </div>

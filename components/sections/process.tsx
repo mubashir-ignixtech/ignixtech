@@ -6,10 +6,10 @@ import { StaggerContainer, StaggerItem } from "@/components/motion"
 import { homeContent } from "@/lib/constants"
 
 const cardColors = [
-  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#FFF0ED", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#FFF5F2", icon: "#F4141F", text: "#2B2B2B" },
   { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
   { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
-  { bg: "#F5F5F5", icon: "#2B2B2B", text: "#2B2B2B" },
 ]
 
 export function ProcessSection() {

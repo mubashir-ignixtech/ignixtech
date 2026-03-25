@@ -9,12 +9,12 @@ import { StaggerContainer, StaggerItem } from "@/components/motion"
 import { homeContent } from "@/lib/constants"
 
 const serviceColors = [
-  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#FFF0ED", icon: "#F4141F", text: "#2B2B2B" },
+  { bg: "#FFF5F2", icon: "#F4141F", text: "#2B2B2B" },
   { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
+  { bg: "#FFF0ED", icon: "#F4141F", text: "#2B2B2B" },
   { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
-  { bg: "#FFEBEA", icon: "#F4141F", text: "#2B2B2B" },
-  { bg: "#E0F5F5", icon: "#087E8B", text: "#2B2B2B" },
-  { bg: "#F4EDFD", icon: "#A491D3", text: "#2B2B2B" },
+  { bg: "#FFF5F2", icon: "#F4141F", text: "#2B2B2B" },
 ]
 
 export function ServicesPreview() {
@@ -67,7 +67,7 @@ export function ServicesPreview() {
           transition={{ delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <Button asChild size="lg" style={{ backgroundColor: "#087E8B" }} className="hover:opacity-90 text-white">
+          <Button asChild size="lg" style={{ backgroundColor: "#F4141F" }} className="hover:opacity-90 text-white">
             <Link href="/services">
               See All Services
               <ArrowRight className="ml-2 h-4 w-4" />

@@ -17,7 +17,7 @@ export function CTASection() {
       
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <FadeIn>
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase rounded-full mb-6" style={{ backgroundColor: "#E0F5F5", color: "#087E8B" }}>
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase rounded-full mb-6" style={{ backgroundColor: "#FFF0ED", color: "#F4141F" }}>
             {homeContent.cta.badge}
           </span>
         </FadeIn>
@@ -68,10 +68,10 @@ export function CTASection() {
               viewport={{ once: true }}
               transition={{ delay: 0.6 + index * 0.1 }}
               className="flex items-center gap-2 px-4 py-2 rounded-full shadow-sm"
-              style={{ backgroundColor: "rgba(255, 255, 255, 0.9)", borderColor: "#E0F5F5", borderWidth: "2px" }}
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.9)", borderColor: "#FFF0ED", borderWidth: "2px" }}
             >
               <div className="w-2 h-2 rounded-full" style={{ background: "linear-gradient(to right, #F4141F, #087E8B)" }} />
-              <span className="text-sm font-medium" style={{ color: "#087E8B" }}>{item}</span>
+              <span className="text-sm font-medium" style={{ color: "#F4141F" }}>{item}</span>
             </motion.div>
           ))}
         </motion.div>

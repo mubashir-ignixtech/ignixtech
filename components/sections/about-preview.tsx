@@ -9,10 +9,10 @@ import { FadeIn } from "@/components/motion"
 import { homeContent } from "@/lib/constants"
 
 const statColors = [
-  { bg: "#E0F5F5", text: "#087E8B" },
+  { bg: "#FFF0ED", text: "#F4141F" },
   { bg: "#FFEBEA", text: "#F4141F" },
   { bg: "#F4EDFD", text: "#A491D3" },
-  { bg: "#F5F5F5", text: "#2B2B2B" },
+  { bg: "#E0F5F5", text: "#087E8B" },
 ]
 
 export function AboutPreview() {
@@ -23,7 +23,7 @@ export function AboutPreview() {
           {/* Content */}
           <div>
             <FadeIn>
-              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase rounded-full mb-4" style={{ backgroundColor: "#E0F5F5", color: "#087E8B" }}>
+              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase rounded-full mb-4" style={{ backgroundColor: "#FFF0ED", color: "#F4141F" }}>
                 {homeContent.aboutPreview.badge}
               </span>
             </FadeIn>
@@ -50,7 +50,7 @@ export function AboutPreview() {
                     viewport={{ once: true }}
                     className="flex items-center gap-2"
                   >
-                    <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: "#087E8B" }} />
+                    <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: "#F4141F" }} />
                     <span style={{ color: "#2B2B2B" }}>{item}</span>
                   </motion.div>
                 ))}
@@ -58,7 +58,7 @@ export function AboutPreview() {
             </FadeIn>
             
             <FadeIn delay={0.5}>
-              <Button asChild size="lg" style={{ backgroundColor: "#087E8B" }} className="hover:opacity-90 text-white">
+              <Button asChild size="lg" style={{ backgroundColor: "#F4141F" }} className="hover:opacity-90 text-white">
                 <Link href="/about">
                   Learn More About Us
                   <ArrowRight className="ml-2 h-4 w-4" />

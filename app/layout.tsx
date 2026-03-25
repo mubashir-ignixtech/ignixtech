@@ -39,20 +39,11 @@ export const metadata: Metadata = {
     title: 'IgnixTech | Ignite Your Ideas, Transform Your Future',
     description: 'We revolutionize industries with dynamic digital solutions, tailored to meet contemporary demands and drive impactful transformations.',
     siteName: 'IgnixTech',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'IgnixTech - Comprehensive Digital Solutions',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'IgnixTech | Ignite Your Ideas, Transform Your Future',
     description: 'We revolutionize industries with dynamic digital solutions.',
-    images: ['/twitter-image.jpg'],
   },
   robots: {
     index: true,

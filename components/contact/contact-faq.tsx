@@ -6,8 +6,17 @@ import { Plus } from "lucide-react"
 import { contactContent } from "@/lib/constants"
 import { SectionHeader } from "@/components/section-header"
 
-function FaqItem({ faq, index }: { faq: { question: string; answer: string }; index: number }) {
-  const [open, setOpen] = useState(false)
+function FaqItem({ 
+  faq, 
+  index, 
+  isOpen, 
+  onToggle 
+}: { 
+  faq: { question: string; answer: string }; 
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -17,17 +26,17 @@ function FaqItem({ faq, index }: { faq: { question: string; answer: string }; in
       className="border-b border-border/60 last:border-0"
     >
       <button
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
         className="w-full flex items-center justify-between gap-4 py-5 text-left group"
       >
-        <span className={`text-sm font-semibold transition-colors ${open ? "text-primary" : "text-foreground group-hover:text-primary"}`}>
+        <span className={`text-sm font-semibold transition-colors ${isOpen ? "text-primary" : "text-foreground group-hover:text-primary"}`}>
           {faq.question}
         </span>
         <motion.div
-          animate={{ rotate: open ? 45 : 0 }}
+          animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.2 }}
           className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center border transition-all ${
-            open ? "bg-primary border-primary text-primary-foreground shadow-md" : "border-border text-muted-foreground group-hover:border-primary group-hover:text-primary"
+            isOpen ? "bg-primary border-primary text-primary-foreground shadow-md" : "border-border text-muted-foreground group-hover:border-primary group-hover:text-primary"
           }`}
         >
           <Plus size={14} strokeWidth={2.5} />
@@ -35,7 +44,7 @@ function FaqItem({ faq, index }: { faq: { question: string; answer: string }; in
       </button>
 
       <AnimatePresence initial={false}>
-        {open && (
+        {isOpen && (
           <motion.div
             key="answer"
             initial={{ height: 0, opacity: 0 }}
@@ -55,6 +64,8 @@ function FaqItem({ faq, index }: { faq: { question: string; answer: string }; in
 }
 
 export function ContactFaq() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0) // First one open by default as is common
+  
   const half = Math.ceil(contactContent.faq.list.length / 2)
   const left  = contactContent.faq.list.slice(0, half)
   const right = contactContent.faq.list.slice(half)
@@ -71,13 +82,28 @@ export function ContactFaq() {
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-x-16">
           <div className="bg-card rounded-2xl border border-border/60 px-6 divide-y-0 shadow-sm">
             {left.map((faq, i) => (
-              <FaqItem key={faq.question} faq={faq} index={i} />
+              <FaqItem 
+                key={faq.question} 
+                faq={faq} 
+                index={i} 
+                isOpen={expandedIndex === i}
+                onToggle={() => setExpandedIndex(expandedIndex === i ? null : i)}
+              />
             ))}
           </div>
           <div className="bg-card rounded-2xl border border-border/60 px-6 divide-y-0 shadow-sm mt-8 lg:mt-0">
-            {right.map((faq, i) => (
-              <FaqItem key={faq.question} faq={faq} index={i + half} />
-            ))}
+            {right.map((faq, i) => {
+              const globalIndex = i + half
+              return (
+                <FaqItem 
+                  key={faq.question} 
+                  faq={faq} 
+                  index={globalIndex} 
+                  isOpen={expandedIndex === globalIndex}
+                  onToggle={() => setExpandedIndex(expandedIndex === globalIndex ? null : globalIndex)}
+                />
+              )
+            })}
           </div>
         </div>
       </div>

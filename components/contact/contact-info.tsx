@@ -83,6 +83,29 @@ function FaqItem({ faq, index }: { faq: { question: string; answer: string }; in
   )
 }
 
+const cardVisuals = [
+  {
+    bg: "bg-[#fff4d1] dark:bg-amber-900/20",
+    iconBg: "bg-amber-600/10",
+    iconColor: "text-amber-600 dark:text-amber-400",
+  },
+  {
+    bg: "bg-[#dcfce7] dark:bg-emerald-900/20",
+    iconBg: "bg-emerald-600/10",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
+  },
+  {
+    bg: "bg-[oklch(0.97_0_0)] dark:bg-slate-800/40",
+    iconBg: "bg-blue-600/10",
+    iconColor: "text-blue-600 dark:text-blue-400",
+  },
+  {
+    bg: "bg-[#f5f0ff] dark:bg-violet-900/20",
+    iconBg: "bg-violet-600/10",
+    iconColor: "text-violet-600 dark:text-violet-400",
+  },
+]
+
 export function ContactInfo() {
   return (
     <div className="space-y-8">
@@ -93,39 +116,42 @@ export function ContactInfo() {
             {contactContent.info.title}
           </h2>
           
-          {contactDetails.map((detail, index) => (
-            <motion.div
-              key={detail.title}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors"
-            >
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <detail.icon className="w-6 h-6 text-primary" />
+          {contactDetails.map((detail, index) => {
+            const visual = cardVisuals[index % cardVisuals.length]
+            return (
+              <motion.div
+                key={detail.title}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`flex gap-4 p-5 rounded-2xl ${visual.bg} border border-border/50 hover:border-primary/30 transition-all shadow-sm group`}
+              >
+                <div className="flex-shrink-0">
+                  <div className={`w-12 h-12 rounded-xl ${visual.iconBg} flex items-center justify-center transition-transform group-hover:scale-110`}>
+                    <detail.icon className={`w-6 h-6 ${visual.iconColor}`} />
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">{detail.title}</h3>
-                <p className="text-sm text-muted-foreground">{detail.description}</p>
-                {detail.href ? (
-                  <a
-                    href={detail.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline inline-flex items-center gap-1 mt-1"
-                  >
-                    {detail.value}
-                    <ArrowRight size={14} />
-                  </a>
-                ) : (
-                  <p className="text-foreground mt-1">{detail.value}</p>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-foreground mb-0.5">{detail.title}</h3>
+                  <p className="text-xs text-muted-foreground mb-2 font-medium line-clamp-1">{detail.description}</p>
+                  {detail.href ? (
+                    <a
+                      href={detail.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-sm font-bold ${visual.iconColor} hover:underline inline-flex items-center gap-1.5 break-all`}
+                    >
+                      {detail.value}
+                      <ArrowRight size={14} className="flex-shrink-0" />
+                    </a>
+                  ) : (
+                    <p className="text-sm font-bold text-foreground break-all">{detail.value}</p>
+                  )}
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </FadeIn>
     </div>

@@ -74,11 +74,11 @@ export function ContactForm() {
 
   return (
     <FadeIn>
-      <div className="relative bg-card rounded-2xl border border-border p-8 overflow-hidden shadow-sm">
-        {/* SVG Noise Texture Overlay */}
+      <div className="relative bg-[#f0f9ff] dark:bg-sky-900/10 rounded-3xl border border-border/50 p-8 sm:p-10 overflow-hidden shadow-sm">
+        {/* Subtle SVG Noise Texture Overlay */}
         <div 
-          className="absolute inset-0 opacity-[0.4] mix-blend-multiply dark:mix-blend-lighten pointer-events-none" 
-          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+          className="absolute inset-0 opacity-[0.1] pointer-events-none mix-blend-overlay" 
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
         />
         
         <div className="relative z-10">

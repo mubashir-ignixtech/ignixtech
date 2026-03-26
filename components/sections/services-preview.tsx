@@ -21,36 +21,45 @@ export function ServicesPreview() {
         />
 
         <StaggerContainer className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {homeContent.servicesPreview.services.map((service, index) => (
-            <StaggerItem key={service.title}>
-              <GlowCard className="h-full flex flex-col">
-                <div className="p-7 flex flex-col h-full">
-                  <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center mb-5">
-                    <service.icon className="w-7 h-7 text-primary" />
+          {homeContent.servicesPreview.services.map((service, index) => {
+            const cardColors = [
+              "bg-[#fff4d1] dark:bg-amber-900/20",
+              "bg-[#dcfce7] dark:bg-emerald-900/20",
+              "bg-[#f8f9fa] dark:bg-slate-800/40"
+            ]
+            const colorClass = cardColors[index % cardColors.length]
+            
+            return (
+              <StaggerItem key={service.title}>
+                <GlowCard className="h-full flex flex-col border-border/50">
+                  <div className={`p-7 flex flex-col rounded-xl ${colorClass}`}>
+                    <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center mb-5 shadow-sm">
+                      <service.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    
+                    <h3 className="text-xl font-semibold text-foreground mb-3 font-serif">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">
+                      {service.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {service.features.map((feature) => (
+                        <span
+                          key={feature}
+                          className="text-xs px-3 py-1.5 rounded-lg bg-background/60 shadow-sm text-foreground/80 font-medium border border-border/30"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  
-                  <h3 className="text-xl font-semibold text-foreground mb-3 font-serif">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">
-                    {service.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {service.features.map((feature) => (
-                      <span
-                        key={feature}
-                        className="text-xs px-3 py-1.5 rounded-lg bg-primary/10 text-primary/90 font-medium"
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </GlowCard>
-            </StaggerItem>
-          ))}
+                </GlowCard>
+              </StaggerItem>
+            )
+          })}
         </StaggerContainer>
 
         <motion.div

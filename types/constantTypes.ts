@@ -6,4 +6,5 @@ export type Job = {
   type: string;
   description: string;
   requirements: string[];
+  applyLink: string;
 }

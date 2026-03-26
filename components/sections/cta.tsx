@@ -11,13 +11,13 @@ export function CTASection() {
   return (
     <section className="py-24 sm:py-32 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/10" />
-      <Floating duration={6} distance={30} className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[150px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-background to-accent/10" />
+      <Floating duration={6} distance={30} className="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-[150px]" />
       <Floating duration={8} distance={20} className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-[150px]" />
       
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <FadeIn>
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20 mb-6">
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-secondary/10 text-secondary-foreground rounded-full border border-secondary/20 mb-6">
             {homeContent.cta.badge}
           </span>
         </FadeIn>

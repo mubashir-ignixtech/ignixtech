@@ -12,19 +12,19 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/20 via-background to-background" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]" />
       
       {/* Animated Orbs */}
-      <Floating duration={4} distance={20} className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/30 rounded-full blur-[100px]" />
-      <Floating duration={5} distance={15} className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px]" />
+      <Floating duration={4} distance={20} className="absolute top-1/4 left-1/4 w-72 h-72 bg-secondary/30 rounded-full blur-[100px]" />
+      <Floating duration={5} distance={15} className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-secondary/30 bg-secondary/10 text-secondary-foreground text-sm font-medium mb-8">
               <span>{homeContent.hero.badge}</span>
             </div>
 
@@ -78,69 +78,67 @@ export function HeroSection() {
           <div className="relative hidden lg:block">
             <FadeIn delay={0.2}>
               <div className="relative">
-                {/* Main Dashboard Image */}
+                {/* Main Dashboard Image - Strictly Generic & Professional */}
                 <div className="relative z-10">
-                  <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/20">
+                  <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-white/50 backdrop-blur-sm">
                     <Image
-                      src="/images/hero-dashboard.jpg"
-                      alt="IgnixTech custom software dashboard interface"
+                      src="/images/hero-dashboard-final.png"
+                      alt="IgnixTech modern generic enterprise dashboard interface"
                       width={600}
                       height={400}
                       className="w-full h-auto object-cover"
                       priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
                   </div>
                 </div>
-
-                {/* Floating Robot Image */}
+ 
+                {/* Floating Collaboration Scene - Generic & Professional */}
                 <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -30, y: 10 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="absolute -left-8 top-1/4 z-20"
+                  className="absolute -left-12 top-1/2 -translate-y-1/2 z-20"
                 >
-                  <Floating duration={4} distance={10}>
-                    <div className="relative w-32 h-32 rounded-xl overflow-hidden border border-primary/30 shadow-xl shadow-primary/30">
+                  <Floating duration={5} distance={8}>
+                    <div className="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-white/60 shadow-2xl p-1 bg-white/80">
                       <Image
-                        src="/images/hero-robot.jpg"
-                        alt="IgnixTech AI and automation technology"
-                        width={128}
-                        height={128}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
-                    </div>
-                  </Floating>
-                </motion.div>
-
-                {/* Floating Laptop Image */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="absolute -right-4 bottom-8 z-20"
-                >
-                  <Floating duration={5} distance={12}>
-                    <div className="relative w-40 h-28 rounded-xl overflow-hidden border border-primary/30 shadow-xl shadow-primary/30">
-                      <Image
-                        src="/images/hero-laptop.jpg"
-                        alt="IgnixTech software development process"
+                        src="/images/hero-collaboration-final.png"
+                        alt="IgnixTech expert team collaboration"
                         width={160}
-                        height={112}
-                        className="w-full h-full object-cover"
+                        height={160}
+                        className="w-full h-full object-cover rounded-xl"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
                     </div>
                   </Floating>
                 </motion.div>
-
+ 
+                {/* Floating Mobile UX - Generic & Professional */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30, y: -10 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="absolute -right-8 bottom-4 z-20"
+                >
+                  <Floating duration={6} distance={10}>
+                    <div className="relative w-44 h-28 rounded-2xl overflow-hidden border-2 border-white/60 shadow-2xl p-1 bg-white/80">
+                      <Image
+                        src="/images/hero-mobile-final.png"
+                        alt="IgnixTech sleek generic mobile user experience"
+                        width={176}
+                        height={112}
+                        className="w-full h-full object-cover rounded-xl"
+                      />
+                    </div>
+                  </Floating>
+                </motion.div>
+ 
                 {/* Decorative Elements */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
-                  className="absolute -top-4 right-12 w-20 h-20 rounded-full bg-primary/20 blur-xl"
+                  className="absolute -top-4 right-12 w-20 h-20 rounded-full bg-secondary/20 blur-xl"
                 />
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
@@ -148,7 +146,7 @@ export function HeroSection() {
                   transition={{ duration: 0.5, delay: 0.8 }}
                   className="absolute bottom-12 -left-4 w-16 h-16 rounded-full bg-primary/30 blur-lg"
                 />
-
+ 
                 {/* Tech Lines */}
                 <svg className="absolute -inset-4 w-[calc(100%+32px)] h-[calc(100%+32px)] pointer-events-none z-0" viewBox="0 0 400 300">
                   <motion.path
@@ -156,7 +154,7 @@ export function HeroSection() {
                     stroke="currentColor"
                     strokeWidth="1"
                     fill="none"
-                    className="text-primary/20"
+                    className="text-secondary/20"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
                     transition={{ duration: 2, delay: 0.5 }}
@@ -166,7 +164,7 @@ export function HeroSection() {
                     stroke="currentColor"
                     strokeWidth="1"
                     fill="none"
-                    className="text-primary/20"
+                    className="text-primary/10"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
                     transition={{ duration: 2, delay: 0.7 }}
@@ -176,19 +174,19 @@ export function HeroSection() {
             </FadeIn>
           </div>
         </div>
-
+ 
         {/* Mobile Hero Image */}
         <div className="lg:hidden mt-12">
-          <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/20">
+          <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-white/50 backdrop-blur-sm">
             <Image
-              src="/images/hero-dashboard.jpg"
-              alt="IgnixTech custom software dashboard interface"
+              src="/images/hero-dashboard-final.png"
+              alt="IgnixTech modern generic enterprise dashboard interface"
               width={600}
               height={400}
               className="w-full h-auto object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
           </div>
         </div>
       </div>

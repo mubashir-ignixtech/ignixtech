@@ -179,23 +179,87 @@ export const homeContent = {
     badge: "Technology",
     title: "Our Technology Stack",
     description: "We leverage cutting-edge technologies to build scalable, secure, and high-performance solutions.",
-    categories: {
-      frontend: ["React", "Next.js", "Vue.js", "Angular", "Tailwind CSS", "TypeScript"],
-      backend: ["Node.js", "Python", "Java", "Go", ".NET", "PHP"],
-      mobile: ["React Native", "Flutter", "Swift", "Kotlin", "iOS", "Android"],
-      cloud: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
-      database: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase", "Supabase"],
-      tools: ["Git", "Jenkins", "GitHub Actions", "Figma", "Jira", "Confluence"],
-    },
-    icons: {
-      frontend: "💻",
-      backend: "⚙️",
-      mobile: "📱",
-      cloud: "☁️",
-      database: "🗄️",
-      tools: "🛠️",
-    },
-    footerMessage: "Our diverse technology portfolio ensures we can recommend and implement the perfect solution for your unique business needs and requirements."
+    footerMessage: "Our diverse technology portfolio ensures we can recommend and implement the perfect solution for your unique business needs and requirements.",
+    tabs: [
+      {
+        id: "frontend",
+        label: "Frontend Development",
+        description: "We craft visually stunning, highly responsive user interfaces using the industry's most powerful modern frameworks and tools.",
+        features: ["React & Next.js", "Vue.js & Angular", "TypeScript", "Tailwind CSS", "Component Libraries", "Performance Optimization"],
+        coreTech: [
+          { name: "React", icon: "SiReact", color: "#61DAFB" },
+          { name: "Next.js", icon: "SiNextdotjs", color: "#000000" },
+          { name: "Vue.js", icon: "SiVuedotjs", color: "#4FC08D" },
+          { name: "TypeScript", icon: "SiTypescript", color: "#3178C6" },
+          { name: "Tailwind", icon: "SiTailwindcss", color: "#06B6D4" },
+        ]
+      },
+      {
+        id: "backend",
+        label: "Backend Development",
+        description: "We build robust, scalable server-side solutions and APIs that power your applications with reliability and speed.",
+        features: ["REST & GraphQL APIs", "Node.js & Python", "Java & Go", ".NET Framework", "Microservices", "Authentication & Security"],
+        coreTech: [
+          { name: "Node.js", icon: "SiNodedotjs", color: "#339933" },
+          { name: "Python", icon: "SiPython", color: "#3776AB" },
+          { name: "Go", icon: "SiGo", color: "#00ADD8" },
+          { name: ".NET", icon: "SiDotnet", color: "#512BD4" },
+          { name: "PHP", icon: "SiPhp", color: "#777BB4" },
+        ]
+      },
+      {
+        id: "mobile",
+        label: "Mobile Development",
+        description: "We develop high-quality native and cross-platform mobile apps for iOS and Android with seamless user experiences.",
+        features: ["iOS Development", "Android Development", "React Native", "Flutter", "App Store Optimization", "Push Notifications"],
+        coreTech: [
+          { name: "React Native", icon: "SiReact", color: "#61DAFB" },
+          { name: "Flutter", icon: "SiFlutter", color: "#02569B" },
+          { name: "Swift", icon: "SiSwift", color: "#F05138" },
+          { name: "Kotlin", icon: "SiKotlin", color: "#7F52FF" },
+          { name: "Firebase", icon: "SiFirebase", color: "#FFCA28" },
+        ]
+      },
+      {
+        id: "cloud",
+        label: "Cloud & DevOps",
+        description: "We architect and manage resilient cloud infrastructure and CI/CD pipelines to keep your systems fast and always available.",
+        features: ["AWS & Azure", "Google Cloud", "Docker & Kubernetes", "Terraform IaC", "CI/CD Pipelines", "Monitoring & Logging"],
+        coreTech: [
+          { name: "AWS", icon: "SiAmazonwebservices", color: "#FF9900" },
+          { name: "Azure", icon: "SiMicrosoftazure", color: "#0078D4" },
+          { name: "Docker", icon: "SiDocker", color: "#2496ED" },
+          { name: "Kubernetes", icon: "SiKubernetes", color: "#326CE5" },
+          { name: "Terraform", icon: "SiTerraform", color: "#844FBA" },
+        ]
+      },
+      {
+        id: "database",
+        label: "Database & Storage",
+        description: "We design and optimize high-performance, scalable database architectures for relational and non-relational data.",
+        features: ["PostgreSQL & MySQL", "MongoDB", "Redis Caching", "Firebase", "Supabase", "Database Optimization"],
+        coreTech: [
+          { name: "PostgreSQL", icon: "SiPostgresql", color: "#4169E1" },
+          { name: "MongoDB", icon: "SiMongodb", color: "#47A248" },
+          { name: "MySQL", icon: "SiMysql", color: "#4479A1" },
+          { name: "Redis", icon: "SiRedis", color: "#DC382D" },
+          { name: "Firebase", icon: "SiFirebase", color: "#FFCA28" },
+        ]
+      },
+      {
+        id: "tools",
+        label: "Tools & Workflow",
+        description: "We follow best-in-class engineering practices using industry standard tooling for collaboration, design and deployment.",
+        features: ["Git & GitHub", "Jenkins & GitHub Actions", "Figma Design", "Jira Project Management", "Confluence", "Agile & Scrum"],
+        coreTech: [
+          { name: "Git", icon: "SiGit", color: "#F05032" },
+          { name: "GitHub", icon: "SiGithub", color: "#181717" },
+          { name: "Figma", icon: "SiFigma", color: "#F24E1E" },
+          { name: "Jira", icon: "SiJira", color: "#0052CC" },
+          { name: "Jenkins", icon: "SiJenkins", color: "#D24939" },
+        ]
+      },
+    ]
   }
 }
 
@@ -244,16 +308,16 @@ export const aboutContent = {
         image: "https://media.licdn.com/dms/image/v2/D4D03AQHuc5hwC0TCVQ/profile-displayphoto-shrink_200_200/B4DZQ2WZejHYAc-/0/1736078629044?e=1776297600&v=beta&t=tT1LE3ohvhfFfFKN2wKrT8V7hJ2fNs_u0MH-UjIxe3w",
         linkedin: "https://www.linkedin.com/in/rizwan-saieed-mohammed-saieed-891b211a2/",
         twitter: "#",
-      },
-      {
-        name: "Muhammad Raza Aslam",
-        role: "Chief Technology Officer",
-        bio: "Architect of scalable solutions with deep technical expertise.",
-        initials: "RA",
-        image:"https://media.licdn.com/dms/image/v2/C4D03AQHMYRUGFgl2ug/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1645974837983?e=1776297600&v=beta&t=zLMN7OLvdvHiPKovcZW_fo4nmlRLizDNMjfXAlLeo2I",
-        linkedin: "https://www.linkedin.com/in/muhammad-raza-aslam-21882b75/",
-        twitter: "#",
       }
+      // {
+      //   name: "Muhammad Raza Aslam",
+      //   role: "Chief Technology Officer",
+      //   bio: "Architect of scalable solutions with deep technical expertise.",
+      //   initials: "RA",
+      //   image:"https://media.licdn.com/dms/image/v2/C4D03AQHMYRUGFgl2ug/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1645974837983?e=1776297600&v=beta&t=zLMN7OLvdvHiPKovcZW_fo4nmlRLizDNMjfXAlLeo2I",
+      //   linkedin: "https://www.linkedin.com/in/muhammad-raza-aslam-21882b75/",
+      //   twitter: "#",
+      // }
     ]
   },
   values: {
@@ -494,15 +558,39 @@ export const contactContent = {
     list: [
       {
         question: "How long does a typical project take?",
-        answer: "Project timelines vary based on scope, but most projects take 4-12 weeks from start to delivery.",
+        answer: "Project timelines vary based on complexity and scope. A simple web application typically takes 4–6 weeks, while enterprise-grade platforms or mobile apps may take 10–16 weeks. We always provide a detailed timeline estimate during discovery before work begins.",
       },
       {
-        question: "Do you offer ongoing support?",
-        answer: "Yes! We offer comprehensive maintenance and support packages for all our clients.",
+        question: "Do you offer ongoing support and maintenance?",
+        answer: "Absolutely. We offer tiered maintenance plans covering bug fixes, security patches, performance monitoring, and feature enhancements. Our support team is available 24/7 for critical issues, and all clients receive a dedicated account manager.",
       },
       {
         question: "What is your development process?",
-        answer: "We follow an agile methodology with regular sprints, demos, and continuous communication.",
+        answer: "We follow an Agile Scrum methodology with 2-week sprints. Each sprint includes planning, development, QA, and a demo session so you always see real progress. We use tools like Jira and Confluence to keep you fully informed.",
+      },
+      {
+        question: "How much does a project cost?",
+        answer: "Pricing depends on the project's scope, complexity, and team size required. We offer three engagement models: Fixed Bid (ideal for well-defined projects), Dedicated Team (for ongoing product work), and Hourly (for flexible, smaller tasks). Book a free consultation and we'll provide a transparent quote.",
+      },
+      {
+        question: "Do you sign NDAs and protect our intellectual property?",
+        answer: "Yes, 100%. We sign Non-Disclosure Agreements before any project discussion begins. All code, designs, and deliverables created during the engagement are fully owned by you upon final payment. We never reuse client IP across projects.",
+      },
+      {
+        question: "Can you work with our existing tech stack?",
+        answer: "Yes. Our engineers are proficient across a wide range of technologies — from legacy systems like PHP and .NET to modern stacks like Next.js, Python, Flutter, and cloud-native infrastructure. We adapt to your environment rather than forcing you to change.",
+      },
+      {
+        question: "How many revision rounds are included?",
+        answer: "Our Fixed Bid projects include two rounds of revisions per milestone at no extra cost. For UI/UX design, we include three rounds of design revisions. Additional changes beyond these are billed transparently at an agreed hourly rate.",
+      },
+      {
+        question: "What happens after the project launches?",
+        answer: "We provide a 30-day post-launch warranty period for all projects, during which any bugs or defects are fixed at no charge. After that, we offer a range of ongoing retainer packages to keep your product healthy, secure, and evolving.",
+      },
+      {
+        question: "How do you handle communication and project transparency?",
+        answer: "We assign a dedicated Project Manager to every engagement. You'll receive weekly progress reports, have access to our project management tools in real-time, and join regular sprint review calls. We believe radical transparency is key to successful partnerships.",
       },
     ]
   },
@@ -515,4 +603,26 @@ export const contactContent = {
   }
 }
 
-export const jobs: Job[] = []
+export const jobs: Job[] = [
+  {
+    id: 1,
+    title: "Junior HR Associate",
+    department: "HR",
+    location: "Gulberg, Lahore",
+    type: "Full-time",
+    description: "We are looking for a motivated and detail-oriented Junior HR Associate to join our HR team. This role is ideal for fresh graduates or individuals with up to 6 months of experience who are passionate about HR, employee engagement, and organizational development. You will support day-to-day HR operations and contribute to creating a positive employee experience.",
+    requirements: [
+      "Bachelor’s degree in HR, Business Administration, Management, Psychology, or related field",
+      "Strong communication and interpersonal skills",
+      "Good organizational and time management abilities",
+      "Basic understanding of HR functions (recruitment, onboarding, documentation, etc.)",
+      "Proficient in MS Office (Word, Excel, PowerPoint)",
+      "Ability to maintain confidentiality and professionalism",
+      "Eager to learn and grow within the HR field",
+      "Proficient in English"
+    ],
+    applyLink: "https://forms.gle/F3nxVe1P8We2iG5S6"
+  }
+]
+
+

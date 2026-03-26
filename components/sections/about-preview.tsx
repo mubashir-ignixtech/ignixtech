@@ -16,7 +16,7 @@ export function AboutPreview() {
           {/* Content */}
           <div>
             <FadeIn>
-              <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20 mb-6">
+              <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-secondary/10 text-secondary-foreground rounded-full border border-secondary/20 mb-6">
                 {homeContent.aboutPreview.badge}
               </span>
             </FadeIn>
@@ -44,7 +44,7 @@ export function AboutPreview() {
                     transition={{ delay: 0.3 + index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0" />
                     <span className="text-foreground">{item}</span>
                   </motion.div>
                 ))}
@@ -66,7 +66,7 @@ export function AboutPreview() {
           {/* Visual Element */}
           <FadeIn direction="right" delay={0.2}>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-accent/20 rounded-3xl blur-3xl" />
               <div className="relative bg-secondary/30 rounded-3xl border border-border/50 p-8 backdrop-blur-sm">
                 <div className="grid grid-cols-2 gap-4 auto-rows-fr mb-6">
                   {homeContent.aboutPreview.stats.map((stat, index) => (
@@ -76,7 +76,7 @@ export function AboutPreview() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.4 + index * 0.1 }}
-                      className="text-center p-5 rounded-2xl bg-background/50 border border-border/30 hover:border-primary/30 transition-colors"
+                      className="text-center p-5 rounded-2xl bg-background/50 border border-border/30 hover:border-secondary/30 transition-colors"
                     >
                       <div className="text-3xl font-bold text-primary">{stat.value}</div>
                       <div className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium">{stat.label}</div>
@@ -90,13 +90,13 @@ export function AboutPreview() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.8 }}
-                  className="mt-6 p-5 rounded-2xl bg-background/50 border border-border/30 hover:border-primary/30 transition-colors"
+                  className="mt-6 p-5 rounded-2xl bg-background/50 border border-border/30 hover:border-secondary/30 transition-colors"
                 >
                   <p className="text-sm text-muted-foreground italic leading-relaxed">
                     &ldquo;{homeContent.aboutPreview.ceoQuote.quote}&rdquo;
                   </p>
                   <div className="mt-4 flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-primary/20 flex items-center justify-center flex-shrink-0 border-2 border-primary/20">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-secondary/20 flex items-center justify-center flex-shrink-0 border-2 border-secondary/20">
                       {homeContent.aboutPreview.ceoQuote.image ? (
                         <Image
                           src={homeContent.aboutPreview.ceoQuote.image}
@@ -106,7 +106,7 @@ export function AboutPreview() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <span className="text-primary font-semibold">{homeContent.aboutPreview.ceoQuote.initials}</span>
+                        <span className="text-secondary-foreground font-semibold">{homeContent.aboutPreview.ceoQuote.initials}</span>
                       )}
                     </div>
                     <div>

@@ -123,7 +123,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-start gap-2"
                   >
-                    <item.icon size={16} className="text-primary shrink-0 mt-0.5" />
+                    <item.icon size={16} className="text-secondary shrink-0 mt-0.5" />
                     <span>
                       {item.label}
                     </span>

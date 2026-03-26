@@ -28,7 +28,15 @@ export function Mission() {
           
           {/* Mission, Vision, Values Cards */}
           <div className="space-y-6">
-            {aboutContent.mission.cards.map((item, index) => (
+            {aboutContent.mission.cards.map((item, index) => {
+              const cardColors = [
+                "bg-[#fff4d1] dark:bg-amber-900/20",
+                "bg-[#dcfce7] dark:bg-emerald-900/20",
+                "bg-[#f8f9fa] dark:bg-slate-800/40"
+              ]
+              const colorClass = cardColors[index % cardColors.length]
+              
+              return (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, x: 50 }}
@@ -36,7 +44,7 @@ export function Mission() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ x: -5 }}
-                className="flex gap-4 p-6 rounded-xl bg-background border border-border hover:border-primary/50 transition-colors"
+                className={`flex gap-4 p-6 rounded-xl ${colorClass} border border-border/50 hover:border-primary/50 transition-colors shadow-sm`}
               >
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -52,7 +60,8 @@ export function Mission() {
                   </p>
                 </div>
               </motion.div>
-            ))}
+            )
+            })}
           </div>
         </div>
       </div>

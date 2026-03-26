@@ -18,26 +18,35 @@ export function WhyChooseUs() {
         />
 
         <StaggerContainer className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {homeContent.whyChooseUs.benefits.map((benefit, index) => (
-            <StaggerItem key={benefit.title}>
-              <div className="group flex flex-col gap-4 p-6 rounded-2xl bg-background/40 backdrop-blur-sm border border-border/50 hover:border-primary/50 hover:bg-background/60 transition-all duration-300 h-full">
-                <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
-                    <benefit.icon className="w-7 h-7 text-primary" />
+          {homeContent.whyChooseUs.benefits.map((benefit, index) => {
+            const cardColors = [
+              "bg-[#fff4d1] dark:bg-amber-900/20",
+              "bg-[#dcfce7] dark:bg-emerald-900/20",
+              "bg-[#f8f9fa] dark:bg-slate-800/40"
+            ]
+            const colorClass = cardColors[index % cardColors.length]
+            
+            return (
+              <StaggerItem key={benefit.title}>
+                <div className={`group flex flex-col gap-4 p-6 rounded-2xl ${colorClass} backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 h-full`}>
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors shadow-sm">
+                      <benefit.icon className="w-7 h-7 text-primary" />
+                    </div>
                   </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                  <div className="h-0.5 w-0 group-hover:w-8 bg-primary transition-all duration-300" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
-                <div className="h-0.5 w-0 group-hover:w-8 bg-primary transition-all duration-300" />
-              </div>
-            </StaggerItem>
-          ))}
+              </StaggerItem>
+            )
+          })}
         </StaggerContainer>
       </div>
     </section>

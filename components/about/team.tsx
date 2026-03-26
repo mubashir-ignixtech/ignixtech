@@ -17,7 +17,7 @@ export function Team() {
           description={aboutContent.team.description}
         />
 
-        <StaggerContainer className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 auto-rows-fr">
+        <StaggerContainer className="mt-16 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-8 auto-rows-fr">
           {aboutContent.team.members.map((member) => (
             <StaggerItem key={member.name}>
               <motion.div

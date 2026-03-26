@@ -1,8 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { FadeIn } from "@/components/motion"
-import { Mail, MapPin, Clock, ArrowRight, Phone } from "lucide-react"
+import { Mail, MapPin, Clock, ArrowRight, Phone, Plus } from "lucide-react"
 import { contactDetails as contactDetailsData, contactContent } from "@/lib/constants"
 
 const contactDetails = [
@@ -35,6 +36,52 @@ const contactDetails = [
     href: null,
   },
 ]
+
+function FaqItem({ faq, index }: { faq: { question: string; answer: string }; index: number }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.1 + index * 0.04 }}
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 py-4 text-left group"
+      >
+        <span className={`text-sm font-semibold transition-colors ${open ? "text-primary" : "text-foreground group-hover:text-primary"}`}>
+          {faq.question}
+        </span>
+        <motion.div
+          animate={{ rotate: open ? 45 : 0 }}
+          transition={{ duration: 0.2 }}
+          className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center border transition-colors ${
+            open ? "bg-primary border-primary text-primary-foreground" : "border-border text-muted-foreground group-hover:border-primary group-hover:text-primary"
+          }`}
+        >
+          <Plus size={14} strokeWidth={2.5} />
+        </motion.div>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="answer"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed pb-4 pr-10">
+              {faq.answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  )
+}
 
 export function ContactInfo() {
   return (
@@ -79,47 +126,6 @@ export function ContactInfo() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </FadeIn>
-
-      {/* FAQ Preview */}
-      <FadeIn direction="right" delay={0.3}>
-        <div className="bg-card rounded-2xl border border-border p-6">
-          <h2 className="text-xl font-bold text-foreground mb-4">
-            {contactContent.faq.title}
-          </h2>
-          
-          <div className="space-y-4">
-            {contactContent.faq.list.map((faq, index) => (
-              <motion.div
-                key={faq.question}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-              >
-                <h3 className="font-medium text-foreground mb-1">
-                  {faq.question}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {faq.answer}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </FadeIn>
-
-      {/* Google Maps Embed */}
-      <FadeIn direction="right" delay={0.4}>
-        <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden border border-border">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d354.37565862206196!2d-63.707623!3d44.719504!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b5989808ea44b81%3A0x4ce22e7f81c7bc9!2s299%20Gary%20Martin%20Dr%2C%20Bedford%2C%20NS%20B4B%202E9%2C%20Canada!5e0!3m2!1sen!2sus!4v1774428479842!5m2!1sen!2sus"
-            className="absolute inset-0 w-full h-full border-0"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
         </div>
       </FadeIn>
     </div>

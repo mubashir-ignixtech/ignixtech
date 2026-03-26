@@ -11,9 +11,11 @@ import {
   Briefcase, 
   ChevronDown, 
   ArrowRight,
-  Mail
+  Mail,
+  Form
 } from "lucide-react"
 import { jobs } from "@/lib/constants"
+import Link from "next/link"
 
 export function JobListings() {
   const [expandedJob, setExpandedJob] = useState<number | null>(null)
@@ -96,11 +98,13 @@ export function JobListings() {
                           ))}
                         </ul>
 
-                        <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                          <Mail className="w-4 h-4 mr-2" />
-                          Apply Now
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
+                        <Link target="_blank" href={job.applyLink}>
+                          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                            <Form className="w-4 h-4 mr-2" />
+                            Apply Now
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </Link>
                       </div>
                     </motion.div>
                   )}
@@ -110,7 +114,7 @@ export function JobListings() {
           )))}
         </div>
 
-        {/* General Application
+        {/* General Application */}
         <FadeIn delay={0.4}>
           <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border text-center">
             <h3 className="text-2xl font-bold text-foreground mb-3">
@@ -119,12 +123,14 @@ export function JobListings() {
             <p className="text-muted-foreground mb-6">
               We are always looking for talented individuals. Send us your resume and we will reach out when a suitable position opens.
             </p>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              Send General Application
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <Link target="_blank" href="https://forms.gle/F3nxVe1P8We2iG5S6">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                Send General Application
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
           </div>
-        </FadeIn> */}
+        </FadeIn>
       </div>
     </section>
   )

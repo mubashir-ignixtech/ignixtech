@@ -2,24 +2,11 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import * as SiIcons from 'react-icons/si';
+import { LiaAmazon } from "react-icons/lia";
+import { VscAzure } from "react-icons/vsc";
 import { SectionHeader } from "@/components/section-header"
 import { homeContent } from "@/lib/constants"
-import {
-  SiReact, SiNextdotjs, SiVuedotjs, SiTypescript, SiTailwindcss,
-  SiNodedotjs, SiPython, SiGo, SiDotnet, SiPhp,
-  SiFlutter, SiSwift, SiKotlin, SiFirebase,
-  SiDocker, SiKubernetes, SiTerraform,
-  SiPostgresql, SiMongodb, SiMysql, SiRedis,
-  SiGit, SiGithub, SiFigma, SiJira, SiJenkins,
-} from "react-icons/si"
-
-const iconMap: Record<string, React.ElementType> = {
-  SiReact, SiNextdotjs, SiVuedotjs, SiTypescript, SiTailwindcss,
-  SiNodedotjs, SiPython, SiGo, SiDotnet, SiPhp,
-  SiFlutter, SiSwift, SiKotlin, SiFirebase, SiDocker, SiKubernetes, SiTerraform,
-  SiPostgresql, SiMongodb, SiMysql, SiRedis,
-  SiGit, SiGithub, SiFigma, SiJira, SiJenkins,
-}
 
 // Accent color per tab
 const tabAccents: Record<string, { gradient: string; pill: string; glow: string; border: string }> = {
@@ -156,7 +143,17 @@ export function TechStack() {
                 <p className="text-sm font-bold text-foreground mb-5 uppercase tracking-wider">Core Tech:</p>
                 <div className="flex flex-wrap gap-5">
                   {active.coreTech.map((tech, i) => {
-                    const Icon = tech.icon ? iconMap[tech.icon] : null
+                    let IconComponent: any = null;
+                    if (tech.icon === "LiaAmazon") {
+                      IconComponent = LiaAmazon;
+                    } else if (tech.icon === "VscAzure") {
+                      IconComponent = VscAzure;
+                    } else {
+                      IconComponent = (SiIcons as any)[tech.icon];
+                    }
+
+                    if (!IconComponent) return null;
+
                     return (
                       <motion.div
                         key={tech.name}
@@ -169,13 +166,7 @@ export function TechStack() {
                           className="w-16 h-16 rounded-2xl flex items-center justify-center bg-card dark:bg-[#414A4C] shadow-md border border-border/40 transition-all duration-200 group-hover:-translate-y-1.5 group-hover:shadow-lg"
                           style={{ boxShadow: `0 4px 20px ${tech.color}30` }}
                         >
-                          {Icon ? (
-                            <Icon style={{ color: tech.color }} size={32} />
-                          ) : (
-                            <span className="text-xl font-black" style={{ color: tech.color }}>
-                              {tech.name.slice(0, 2)}
-                            </span>
-                          )}
+                          <IconComponent color={tech.color} size={24} />
                         </div>
                         <span className="text-[11px] text-muted-foreground font-semibold group-hover:text-foreground transition-colors">
                           {tech.name}

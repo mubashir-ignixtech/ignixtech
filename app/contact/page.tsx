@@ -7,7 +7,7 @@ import { OfficesMap } from "@/components/contact/offices-map"
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Get in touch with IgnixTech. We'd love to hear from you and discuss how we can help transform your business.",
+  description: "Get in touch with Ignixtech. We'd love to hear from you and discuss how we can help transform your business.",
 }
 
 export default function ContactPage() {

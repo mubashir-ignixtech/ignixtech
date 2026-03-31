@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
- import { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
@@ -9,10 +9,12 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 import { navLinks, siteConfig } from "@/lib/constants"
+import { HireProModal } from "@/components/hire-pro-modal"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isHireModalOpen, setIsHireModalOpen] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -42,8 +44,8 @@ export function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 className="font-serif text-2xl font-bold tracking-tight"
               >
-                <Image src="/icon-light.svg" alt="IgnixTech Logo" width={150} height={150} className="block dark:hidden" />
-                <Image src="/icon.svg" alt="IgnixTech Logo" width={150} height={150} className="hidden dark:block" />
+                <Image src="/icon-light.svg" alt="Ignixtech Logo" width={150} height={150} className="block dark:hidden" />
+                <Image src="/icon.svg" alt="Ignixtech Logo" width={150} height={150} className="hidden dark:block" />
               </motion.div>
             </Link>
 
@@ -71,8 +73,11 @@ export function Navbar() {
             </div>
 
             <div className="hidden md:flex items-center gap-4">
+              <Button asChild className="bg-transparent text-primary hover:bg-primary hover:text-primary-foreground cursor-pointer border border-primary" onClick={() => setIsHireModalOpen(true)}>
+                <span>Get in Touch</span>
+              </Button>
               <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer">Get Started</a>
+                <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer">Get a Quote</a>
               </Button>
             </div>
 
@@ -122,9 +127,23 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.1 }}
               >
-                <Button asChild size="lg" className="bg-primary text-primary-foreground mt-4">
-                  <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
-                    Get Started
+                <Button asChild className="bg-transparent text-primary hover:bg-primary hover:text-primary-foreground cursor-pointer border border-primary" onClick={() => setIsHireModalOpen(true)}>
+                  <span>Get in Touch</span>
+                </Button>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+              >
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a
+                    href={siteConfig.links.calendly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Get a Quote
                   </a>
                 </Button>
               </motion.div>
@@ -132,6 +151,9 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Hire a Pro Modal */}
+      <HireProModal isOpen={isHireModalOpen} onClose={() => setIsHireModalOpen(false)} />
     </>
   )
 }

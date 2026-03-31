@@ -7,7 +7,7 @@ import { CTASection } from "@/components/sections/cta"
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about IgnixTech's mission, vision, and the team behind our innovative digital solutions.",
+  description: "Learn about Ignixtech's mission, vision, and the team behind our innovative digital solutions.",
 }
 
 export default function AboutPage() {

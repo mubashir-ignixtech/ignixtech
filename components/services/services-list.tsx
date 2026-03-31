@@ -1,97 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FadeIn } from "@/components/motion"
-import { CheckCircle2 } from "lucide-react"
-import { servicesContent } from "@/lib/constants"
-import {
-  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma,
-  SiNodedotjs, SiPython, SiGo, SiPhp, SiGraphql,
-  SiFlutter, SiSwift, SiKotlin, SiFirebase,
-  SiDocker, SiKubernetes, SiTerraform, SiGithubactions,
-  SiGit, SiSelenium, SiCypress,
-  SiMetasploit,
-  SiOwasp,
-  SiBurpsuite,
-  SiApachejmeter,
-  SiGrafana,
-} from "react-icons/si"
-import { FaShieldAlt } from "react-icons/fa"
-import { VscPlayCircle } from "react-icons/vsc";
-
-// Per-service visual config: background color, accent, tech icons with colors
-const serviceVisuals = [
-  {
-    bg: "bg-[#fff4d1] dark:bg-amber-900/20",
-    accentText: "text-amber-600 dark:text-amber-400",
-    stat: { value: "100+", label: "Designs Delivered" },
-    icons: [
-      { Icon: SiReact, color: "#61DAFB", label: "React" },
-      { Icon: SiFigma, color: "#F24E1E", label: "Figma" },
-      { Icon: SiTypescript, color: "#3178C6", label: "TypeScript" },
-      { Icon: SiTailwindcss, color: "#06B6D4", label: "Tailwind" },
-      { Icon: SiNextdotjs, color: "#000000", label: "Next.js" },
-    ],
-  },
-  {
-    bg: "bg-[#dcfce7] dark:bg-emerald-900/20",
-    accentText: "text-emerald-600 dark:text-emerald-400",
-    stat: { value: "200+", label: "APIs Shipped" },
-    icons: [
-      { Icon: SiNodedotjs, color: "#339933", label: "Node.js" },
-      { Icon: SiPython, color: "#3776AB", label: "Python" },
-      { Icon: SiGo, color: "#00ADD8", label: "Go" },
-      { Icon: SiPhp, color: "#777BB4", label: "PHP" },
-      { Icon: SiGraphql, color: "#E10098", label: "GraphQL" },
-    ],
-  },
-  {
-    bg: "bg-[#f0f4ff] dark:bg-slate-800/40",
-    accentText: "text-blue-600 dark:text-blue-400",
-    stat: { value: "50+", label: "Apps Published" },
-    icons: [
-      { Icon: SiReact, color: "#61DAFB", label: "React Native" },
-      { Icon: SiFlutter, color: "#02569B", label: "Flutter" },
-      { Icon: SiSwift, color: "#F05138", label: "Swift" },
-      { Icon: SiKotlin, color: "#7F52FF", label: "Kotlin" },
-      { Icon: SiFirebase, color: "#FFCA28", label: "Firebase" },
-    ],
-  },
-  {
-    bg: "bg-[#fef0f0] dark:bg-rose-900/20",
-    accentText: "text-rose-600 dark:text-rose-400",
-    stat: { value: "99.9%", label: "Bug Detection Rate" },
-    icons: [
-      { Icon: SiSelenium, color: "#43B02A", label: "Selenium" },
-      { Icon: SiCypress, color: "#17202C", label: "Cypress" },
-      { Icon: SiApachejmeter , color: "#D24939", label: "Apache JMeter" },
-      { Icon: SiGrafana, color: "#0052CC", label: "Grafana" },
-    ],
-  },
-  {
-    bg: "bg-[#f0f9ff] dark:bg-sky-900/20",
-    accentText: "text-sky-600 dark:text-sky-400",
-    stat: { value: "99.99%", label: "Uptime SLA" },
-    icons: [
-      { Icon: SiDocker, color: "#2496ED", label: "Docker" },
-      { Icon: SiKubernetes, color: "#326CE5", label: "Kubernetes" },
-      { Icon: SiTerraform, color: "#844FBA", label: "Terraform" },
-      { Icon: SiGithubactions, color: "#2088FF", label: "GH Actions" },
-      { Icon: SiGit, color: "#F05032", label: "Git" },
-    ],
-  },
-  {
-    bg: "bg-[#f5f0ff] dark:bg-violet-900/20",
-    accentText: "text-violet-600 dark:text-violet-400",
-    stat: { value: "0", label: "Known Breaches" },
-    icons: [
-      { Icon: FaShieldAlt, color: "#8B5CF6", label: "Pen Testing" },
-      { Icon: SiMetasploit , color: "#3776AB", label: "Metasploit" },
-      { Icon: SiOwasp , color: "#00ADD8", label: "OWASP" },
-      { Icon: SiBurpsuite , color: "#181717", label: "SiBurpsuite" },
-    ],
-  },
-]
+import { FaCheckCircle } from 'react-icons/fa'; // Replaced Lucide icon
+import { servicesContent, serviceVisuals } from '@/lib/constants';
+import { FadeIn } from '@/components/motion';
 
 export function ServicesList() {
   return (
@@ -109,7 +21,7 @@ export function ServicesList() {
                     index % 2 === 1 ? "lg:grid-flow-dense" : ""
                   }`}
                 >
-                  {/* Content */}
+                  {/* Content Panel */}
                   <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -136,10 +48,10 @@ export function ServicesList() {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: featureIndex * 0.1 }}
-                          className="flex items-center gap-2"
+                          className="flex items-center gap-3"
                         >
-                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span className="text-foreground">{feature}</span>
+                          <FaCheckCircle className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
+                          <span className="text-foreground text-sm font-medium leading-tight">{feature}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -169,15 +81,15 @@ export function ServicesList() {
                         </div>
                       </div>
 
-                      {/* Tech Icons Grid */}
-                      <div className="relative grid grid-cols-5 gap-3 mb-8">
+                      {/* Tech Icons Grid - Updated to handle 8 items cleanly */}
+                      <div className="relative grid grid-cols-3 sm:grid-cols-4 gap-4 mb-8">
                         {visual.icons.map(({ Icon, color, label }, i) => (
                           <motion.div
                             key={label}
                             initial={{ opacity: 0, scale: 0.7 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.3 + i * 0.07 }}
+                            transition={{ delay: 0.3 + i * 0.05 }}
                             className="flex flex-col items-center gap-2 group"
                           >
                             <div
@@ -200,7 +112,7 @@ export function ServicesList() {
                           <p className="text-xs text-muted-foreground font-medium">{visual.stat.label}</p>
                         </div>
                         <div className="flex gap-1">
-                          {[0,1,2].map(i => (
+                          {[0, 1, 2].map((i) => (
                             <div key={i} className="w-2 h-2 rounded-full bg-primary/30" />
                           ))}
                         </div>

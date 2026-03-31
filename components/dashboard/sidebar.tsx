@@ -49,7 +49,7 @@ export function Sidebar({ user, profile }: { user: any, profile: any }) {
   return (
     <div className="flex h-screen w-64 flex-col border-r bg-card">
       <div className="flex h-16 items-center border-b px-6">
-        <span className="text-xl font-bold text-primary">IgnixTech</span>
+        <span className="text-xl font-bold text-primary">Ignixtech</span>
       </div>
 
       <div className="flex flex-1 flex-col overflow-y-auto px-4 py-6">

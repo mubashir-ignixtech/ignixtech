@@ -46,7 +46,7 @@ export default function SignupPage() {
         <CardHeader>
           <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
           <CardDescription>
-            Join IgnixTech Resource Management System
+            Join Ignixtech Resource Management System
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSignup}>

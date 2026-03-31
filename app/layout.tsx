@@ -25,24 +25,24 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://ignixtech.ca'),
   title: {
-    default: 'IgnixTech | Ignite Your Ideas, Transform Your Future',
-    template: '%s | IgnixTech'
+    default: 'Ignixtech | Ignite Your Ideas, Transform Your Future',
+    template: '%s | Ignixtech'
   },
   description: 'We revolutionize industries with dynamic digital solutions, tailored to meet contemporary demands and drive impactful transformations for businesses of all sectors.',
   keywords: ['software development', 'UI/UX design', 'mobile app development', 'DevOps', 'cybersecurity', 'quality assurance', 'tech partner', 'digital transformation'],
-  authors: [{ name: 'IgnixTech' }],
-  creator: 'IgnixTech',
+  authors: [{ name: 'Ignixtech' }],
+  creator: 'Ignixtech',
   openGraph: {
     type: 'website',
     locale: 'en_CA',
     url: 'https://ignixtech.ca',
-    title: 'IgnixTech | Ignite Your Ideas, Transform Your Future',
+    title: 'Ignixtech | Ignite Your Ideas, Transform Your Future',
     description: 'We revolutionize industries with dynamic digital solutions, tailored to meet contemporary demands and drive impactful transformations.',
-    siteName: 'IgnixTech',
+    siteName: 'Ignixtech',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IgnixTech | Ignite Your Ideas, Transform Your Future',
+    title: 'Ignixtech | Ignite Your Ideas, Transform Your Future',
     description: 'We revolutionize industries with dynamic digital solutions.',
   },
   robots: {

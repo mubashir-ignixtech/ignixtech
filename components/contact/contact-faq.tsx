@@ -64,7 +64,7 @@ function FaqItem({
 }
 
 export function ContactFaq() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0) // First one open by default as is common
+  const [expandedIndex, setExpandedIndex] = useState<number | null>() // First one open by default as is common
   
   const half = Math.ceil(contactContent.faq.list.length / 2)
   const left  = contactContent.faq.list.slice(0, half)

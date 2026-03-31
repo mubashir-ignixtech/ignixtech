@@ -46,8 +46,8 @@ export function Footer() {
                 whileHover={{ scale: 1.05 }}
                 className="font-serif text-2xl font-bold tracking-tight"
               >
-                <Image src="/icon-light.svg" alt="IgnixTech Logo" width={150} height={150} className="block dark:hidden" />
-                <Image src="/icon.svg" alt="IgnixTech Logo" width={150} height={150} className="hidden dark:block" />
+                <Image src="/icon-light.svg" alt="Ignixtech Logo" width={150} height={150} className="block dark:hidden" />
+                <Image src="/icon.svg" alt="Ignixtech Logo" width={150} height={150} className="hidden dark:block" />
               </motion.div>
             </Link>
             <p className="mt-4 text-muted-foreground text-sm leading-relaxed">
@@ -137,7 +137,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} IgnixTech. All rights reserved.
+            &copy; {new Date().getFullYear()} Ignixtech. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">

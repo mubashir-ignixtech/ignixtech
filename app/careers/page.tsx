@@ -7,7 +7,7 @@ import { CTASection } from "@/components/sections/cta"
 
 export const metadata: Metadata = {
   title: "Careers",
-  description: "Join our team of innovators. Explore exciting career opportunities at IgnixTech and be part of something extraordinary.",
+  description: "Join our team of innovators. Explore exciting career opportunities at Ignixtech and be part of something extraordinary.",
 }
 
 export default function CareersPage() {

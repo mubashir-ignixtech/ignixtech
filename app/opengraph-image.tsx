@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
-export const alt = 'IgnixTech - Engineering the Digital Future'
+export const alt = 'Ignixtech - Engineering the Digital Future'
 export const size = {
   width: 1200,
   height: 630,
@@ -38,7 +38,7 @@ export default async function Image() {
             marginBottom: 20,
           }}
         >
-          IgnixTech
+          Ignixtech
         </div>
         <div
           style={{

@@ -83,7 +83,7 @@ export function HeroSection() {
                   <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-white/50 backdrop-blur-sm">
                     <Image
                       src="/images/hero-dashboard-final.png"
-                      alt="IgnixTech modern generic enterprise dashboard interface"
+                      alt="Ignixtech modern generic enterprise dashboard interface"
                       width={600}
                       height={400}
                       className="w-full h-auto object-cover"
@@ -104,7 +104,7 @@ export function HeroSection() {
                     <div className="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-white/60 shadow-2xl p-1 bg-white/80">
                       <Image
                         src="/images/hero-collaboration-final.png"
-                        alt="IgnixTech expert team collaboration"
+                        alt="Ignixtech expert team collaboration"
                         width={160}
                         height={160}
                         className="w-full h-full object-cover rounded-xl"
@@ -124,7 +124,7 @@ export function HeroSection() {
                     <div className="relative w-44 h-28 rounded-2xl overflow-hidden border-2 border-white/60 shadow-2xl p-1 bg-white/80">
                       <Image
                         src="/images/hero-mobile-final.png"
-                        alt="IgnixTech sleek generic mobile user experience"
+                        alt="Ignixtech sleek generic mobile user experience"
                         width={176}
                         height={112}
                         className="w-full h-full object-cover rounded-xl"
@@ -180,7 +180,7 @@ export function HeroSection() {
           <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-white/50 backdrop-blur-sm">
             <Image
               src="/images/hero-dashboard-final.png"
-              alt="IgnixTech modern generic enterprise dashboard interface"
+              alt="Ignixtech modern generic enterprise dashboard interface"
               width={600}
               height={400}
               className="w-full h-auto object-cover"

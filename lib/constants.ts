@@ -1,8 +1,31 @@
 import { Job } from "@/types/constantTypes"
-import { Palette, Code, Smartphone, Bug, Server, Shield, Zap, Target, Users, Clock, Award, HeadphonesIcon, Search, Lightbulb, Rocket, Eye, Heart, Globe, Sparkles, Wallet, GraduationCap, Laptop, Coffee, Plane, PartyPopper, Goal } from "lucide-react"
+import { Palette, Code, Smartphone, Bug, Server, Shield, Zap, Target, Users, Clock, Award, HeadphonesIcon, Search, Lightbulb, Rocket, Eye, Heart, Globe, Sparkles, Wallet, GraduationCap, Laptop, Coffee, Plane, PartyPopper, Goal, Users2 } from "lucide-react"
+
+import { 
+  // UI/UX
+  SiReact, SiFigma, SiTypescript, SiTailwindcss, SiNextdotjs, SiFramer, SiStorybook,
+  // Software Dev
+  SiNodedotjs, SiPython, SiGo, SiGraphql, SiPostgresql, SiMongodb, SiRedis,
+  // Mobile
+  SiFlutter, SiSwift, SiKotlin, SiFirebase, SiApple, SiAndroid, SiSqlite,
+  // QA
+  SiSelenium, SiCypress, SiApachejmeter, SiGrafana, SiPostman, SiJest, SiAppium,
+  // DevOps
+  SiDocker, SiKubernetes, SiTerraform, SiGithubactions, SiGit, SiGooglecloud,
+  // Cyber
+  SiOwasp, SiBurpsuite, SiCloudflare, SiAuth0, SiKalilinux, SiVault, SiWireguard,
+
+  SiOpenai, SiLangchain, SiChatwoot, SiZapier, SiN8N
+} from "react-icons/si";
+import { 
+  FaPalette, FaCode, FaMobileAlt, FaBug, FaServer, FaShieldAlt ,FaRobot, FaCogs
+} from "react-icons/fa";
+import { LiaAdobe, LiaAmazon } from "react-icons/lia";
+import { VscAzure } from "react-icons/vsc";
+
 
 export const siteConfig = {
-  name: "IgnixTech",
+  name: "Ignixtech",
   description: "Engineering the Digital Future",
   links: {
     calendly: "https://calendly.com/rizwan-ignixtech",
@@ -40,7 +63,7 @@ export const homeContent = {
   aboutPreview: {
     badge: "About Us",
     heading: "From Concept to Impact, We Ignite It All",
-    description: "At IgnixTech, we are passionate about transforming innovative ideas into powerful digital solutions. With a team of experienced developers, designers, and strategists, we deliver excellence at every step.",
+    description: "At Ignixtech, we are passionate about transforming innovative ideas into powerful digital solutions. With a team of experienced developers, designers, and strategists, we deliver excellence at every step.",
     highlights: [
       "User-Centric Design Approach",
       "Scalable & Secure Solutions",
@@ -56,7 +79,7 @@ export const homeContent = {
       { value: "24/7", label: "Support Available" },
     ],
     ceoQuote: {
-      quote: "At IgnixTech, we believe in transforming visions into reality through innovation and excellence.",
+      quote: "At Ignixtech, we believe in transforming visions into reality through innovation and excellence.",
       initials: "RS",
       name: "Rizwan Saieed",
       title: "Co-Founder & CEO",
@@ -175,105 +198,148 @@ export const homeContent = {
     description: "Transform your ideas into reality with our expert team. From concept to launch, we're here to help you build something extraordinary.",
     tags: ["Free Consultation", "No Commitment", "Expert Guidance"]
   },
-  techStack: {
-    badge: "Technology",
-    title: "Our Technology Stack",
-    description: "We leverage cutting-edge technologies to build scalable, secure, and high-performance solutions.",
-    footerMessage: "Our diverse technology portfolio ensures we can recommend and implement the perfect solution for your unique business needs and requirements.",
+  techStack:{
+    badge: "Technology Stack",
+    title: "Engineering Excellence Meets Modern Tech",
+    description: "We build resilient, secure, and scalable digital products using battle-tested frameworks and modern cloud infrastructure.",
+    footerMessage: "Don't see your preferred technology? Our team is highly adaptable and continuously expanding our expertise to meet complex architectural needs.",
     tabs: [
       {
         id: "frontend",
-        label: "Frontend Development",
-        description: "We craft visually stunning, highly responsive user interfaces using the industry's most powerful modern frameworks and tools.",
-        features: ["React & Next.js", "Vue.js & Angular", "TypeScript", "Tailwind CSS", "Component Libraries", "Performance Optimization"],
+        label: "Frontend",
+        description: "Delivering highly responsive, accessible, and performant user interfaces that drive engagement and conversions.",
+        features: [
+          "Single Page Applications (SPA)", 
+          "Server-Side Rendering (SSR)", 
+          "Micro-Frontends", 
+          "Web Accessibility (a11y)", 
+          "State Management", 
+          "Core Web Vitals Optimization"
+        ],
         coreTech: [
           { name: "React", icon: "SiReact", color: "#61DAFB" },
           { name: "Next.js", icon: "SiNextdotjs", color: "#000000" },
           { name: "Vue.js", icon: "SiVuedotjs", color: "#4FC08D" },
           { name: "TypeScript", icon: "SiTypescript", color: "#3178C6" },
-          { name: "Tailwind", icon: "SiTailwindcss", color: "#06B6D4" },
+          { name: "Tailwind CSS", icon: "SiTailwindcss", color: "#06B6D4" },
         ]
       },
       {
         id: "backend",
-        label: "Backend Development",
-        description: "We build robust, scalable server-side solutions and APIs that power your applications with reliability and speed.",
-        features: ["REST & GraphQL APIs", "Node.js & Python", "Java & Go", ".NET Framework", "Microservices", "Authentication & Security"],
+        label: "Backend",
+        description: "Architecting secure, high-throughput server-side applications and APIs designed to scale seamlessly with your user base.",
+        features: [
+          "Microservices Architecture", 
+          "RESTful & GraphQL APIs", 
+          "Event-Driven Systems", 
+          "Real-time Websockets", 
+          "Role-Based Access Control (RBAC)", 
+          "Serverless Computing"
+        ],
         coreTech: [
           { name: "Node.js", icon: "SiNodedotjs", color: "#339933" },
           { name: "Python", icon: "SiPython", color: "#3776AB" },
           { name: "Go", icon: "SiGo", color: "#00ADD8" },
           { name: ".NET", icon: "SiDotnet", color: "#512BD4" },
-          { name: "PHP", icon: "SiPhp", color: "#777BB4" },
+          { name: "GraphQL", icon: "SiGraphql", color: "#E10098" },
         ]
       },
       {
         id: "mobile",
-        label: "Mobile Development",
-        description: "We develop high-quality native and cross-platform mobile apps for iOS and Android with seamless user experiences.",
-        features: ["iOS Development", "Android Development", "React Native", "Flutter", "App Store Optimization", "Push Notifications"],
+        label: "Mobile",
+        description: "Crafting native and cross-platform mobile experiences that feel fluid, intuitive, and perfectly integrated with device hardware.",
+        features: [
+          "Cross-Platform Development", 
+          "Native iOS & Android", 
+          "Offline-First Architecture", 
+          "Push Notification Pipelines", 
+          "Biometric Authentication", 
+          "App Store Deployment"
+        ],
         coreTech: [
           { name: "React Native", icon: "SiReact", color: "#61DAFB" },
           { name: "Flutter", icon: "SiFlutter", color: "#02569B" },
           { name: "Swift", icon: "SiSwift", color: "#F05138" },
           { name: "Kotlin", icon: "SiKotlin", color: "#7F52FF" },
-          { name: "Firebase", icon: "SiFirebase", color: "#FFCA28" },
+          { name: "Android", icon: "SiAndroid", color: "#3DDC84" },
+        ]
+      },
+      {
+        id: "database",
+        label: "Data & Storage",
+        description: "Designing optimized database schemas and caching layers for complex queries, high availability, and absolute data integrity.",
+        features: [
+          "Relational Database Design", 
+          "NoSQL Data Modeling", 
+          "In-Memory Caching", 
+          "Data Warehousing", 
+          "Automated Backups", 
+          "Vector Databases (AI)"
+        ],
+        coreTech: [
+          { name: "PostgreSQL", icon: "SiPostgresql", color: "#4169E1" },
+          { name: "MongoDB", icon: "SiMongodb", color: "#47A248" },
+          { name: "Redis", icon: "SiRedis", color: "#DC382D" },
+          { name: "MySQL", icon: "SiMysql", color: "#4479A1" },
+          { name: "Supabase", icon: "SiSupabase", color: "#3ECF8E" },
         ]
       },
       {
         id: "cloud",
         label: "Cloud & DevOps",
-        description: "We architect and manage resilient cloud infrastructure and CI/CD pipelines to keep your systems fast and always available.",
-        features: ["AWS & Azure", "Google Cloud", "Docker & Kubernetes", "Terraform IaC", "CI/CD Pipelines", "Monitoring & Logging"],
+        description: "Automating deployments and managing cloud infrastructure to ensure zero-downtime releases and rapid disaster recovery.",
+        features: [
+          "Infrastructure as Code (IaC)", 
+          "Continuous Integration (CI/CD)", 
+          "Container Orchestration", 
+          "Cloud Migration Strategy", 
+          "Load Balancing", 
+          "24/7 Monitoring & Alerting"
+        ],
         coreTech: [
-          { name: "AWS", icon: "SiAmazonwebservices", color: "#FF9900" },
-          { name: "Azure", icon: "SiMicrosoftazure", color: "#0078D4" },
+          { name: "AWS", icon: "LiaAmazon", color: "#FF9900" },
+          { name: "Azure", icon: "VscAzure", color: "#0078D4" },
           { name: "Docker", icon: "SiDocker", color: "#2496ED" },
           { name: "Kubernetes", icon: "SiKubernetes", color: "#326CE5" },
           { name: "Terraform", icon: "SiTerraform", color: "#844FBA" },
         ]
       },
       {
-        id: "database",
-        label: "Database & Storage",
-        description: "We design and optimize high-performance, scalable database architectures for relational and non-relational data.",
-        features: ["PostgreSQL & MySQL", "MongoDB", "Redis Caching", "Firebase", "Supabase", "Database Optimization"],
+        id: "ai",
+        label: "AI & Automation",
+        description: "Integrating intelligent workflows and language models to automate operations, analyze data, and enhance user experiences.",
+        features: [
+          "LLM Integration", 
+          "Custom AI Chatbots", 
+          "Workflow Automation", 
+          "Retrieval-Augmented Generation (RAG)", 
+          "Predictive Analytics", 
+          "Data Scraping & Structuring"
+        ],
         coreTech: [
-          { name: "PostgreSQL", icon: "SiPostgresql", color: "#4169E1" },
-          { name: "MongoDB", icon: "SiMongodb", color: "#47A248" },
-          { name: "MySQL", icon: "SiMysql", color: "#4479A1" },
-          { name: "Redis", icon: "SiRedis", color: "#DC382D" },
-          { name: "Firebase", icon: "SiFirebase", color: "#FFCA28" },
+          { name: "OpenAI", icon: "SiOpenai", color: "#121212" },
+          { name: "Hugging Face", icon: "SiHuggingface", color: "#FFD21E" },
+          { name: "TensorFlow", icon: "SiTensorflow", color: "#FF6F00" },
+          { name: "LangChain", icon: "SiLangchain", color: "#121212" },
+          { name:"Chatwoot", icon:"SiChatwoot", color:"#3199d9ff"},
+          { name:"Claude", icon:"SiClaude", color:"#FF6F00"}
         ]
-      },
-      {
-        id: "tools",
-        label: "Tools & Workflow",
-        description: "We follow best-in-class engineering practices using industry standard tooling for collaboration, design and deployment.",
-        features: ["Git & GitHub", "Jenkins & GitHub Actions", "Figma Design", "Jira Project Management", "Confluence", "Agile & Scrum"],
-        coreTech: [
-          { name: "Git", icon: "SiGit", color: "#F05032" },
-          { name: "GitHub", icon: "SiGithub", color: "#181717" },
-          { name: "Figma", icon: "SiFigma", color: "#F24E1E" },
-          { name: "Jira", icon: "SiJira", color: "#0052CC" },
-          { name: "Jenkins", icon: "SiJenkins", color: "#D24939" },
-        ]
-      },
+      }
     ]
   }
 }
 
 export const aboutContent = {
   hero: {
-    badge: "About IgnixTech",
+    badge: "About Ignixtech",
     heading1: "We Ignite Innovation &",
     heading2: " Transform Businesses",
-    description: "IgnixTech is a forward-thinking technology company dedicated to delivering cutting-edge digital solutions that empower businesses to thrive in the modern era."
+    description: "Ignixtech is a forward-thinking technology company dedicated to delivering cutting-edge digital solutions that empower businesses to thrive in the modern era."
   },
   mission: {
     title: "Our Story",
     story: [
-      "Founded with a vision to bridge the gap between innovative ideas and technological excellence, IgnixTech has grown into a trusted partner for businesses seeking digital transformation.",
+      "Founded with a vision to bridge the gap between innovative ideas and technological excellence, Ignixtech has grown into a trusted partner for businesses seeking digital transformation.",
       "Our journey began with a simple belief: that technology should empower, not complicate. This philosophy drives everything we do, from our approach to software development to how we engage with our clients.",
       "Today, we are proud to have helped numerous businesses across various industries achieve their digital goals, delivering solutions that are not just functional but transformative."
     ],
@@ -291,7 +357,7 @@ export const aboutContent = {
       {
         icon: Heart,
         title: "Our Values",
-        description: "Integrity, Innovation, Excellence, and Client-Centricity form the foundation of everything we do at IgnixTech.",
+        description: "Integrity, Innovation, Excellence, and Client-Centricity form the foundation of everything we do at Ignixtech.",
       },
     ]
   },
@@ -303,7 +369,7 @@ export const aboutContent = {
       {
         name: "Rizwan Saieed",
         role: "Co-Founder & CEO",
-        bio: "Visionary leader driving innovation and excellence at IgnixTech.",
+        bio: "Visionary leader driving innovation and excellence at Ignixtech.",
         initials: "RS",
         image: "https://media.licdn.com/dms/image/v2/D4D03AQHuc5hwC0TCVQ/profile-displayphoto-shrink_200_200/B4DZQ2WZejHYAc-/0/1736078629044?e=1776297600&v=beta&t=tT1LE3ohvhfFfFKN2wKrT8V7hJ2fNs_u0MH-UjIxe3w",
         linkedin: "https://www.linkedin.com/in/rizwan-saieed-mohammed-saieed-891b211a2/",
@@ -359,6 +425,112 @@ export const aboutContent = {
   }
 }
 
+
+export const serviceVisuals = [
+  {
+    bg: "bg-[#fff4d1] dark:bg-amber-900/20",
+    accentText: "text-amber-600 dark:text-amber-400",
+    stat: { value: "100+", label: "Designs Delivered" },
+    icons: [
+      { Icon: SiFigma, color: "#F24E1E", label: "Figma" },
+      { Icon: SiFramer, color: "#0055FF", label: "Framer" },
+      { Icon: LiaAdobe, color: "#FF61F6", label: "Adobe XD" },
+      { Icon: SiStorybook, color: "#FF4785", label: "Storybook" },
+      { Icon: SiReact, color: "#61DAFB", label: "React" },
+      { Icon: SiNextdotjs, color: "#000000", label: "Next.js" },
+      { Icon: SiTailwindcss, color: "#06B6D4", label: "Tailwind" },
+      { Icon: SiTypescript, color: "#3178C6", label: "TypeScript" },
+    ],
+  },
+  {
+    bg: "bg-[#dcfce7] dark:bg-emerald-900/20",
+    accentText: "text-emerald-600 dark:text-emerald-400",
+    stat: { value: "200+", label: "APIs Shipped" },
+    icons: [
+      { Icon: SiNodedotjs, color: "#339933", label: "Node.js" },
+      { Icon: SiPython, color: "#3776AB", label: "Python" },
+      { Icon: SiGo, color: "#00ADD8", label: "Go" },
+      { Icon: SiGraphql, color: "#E10098", label: "GraphQL" },
+      { Icon: SiPostgresql, color: "#4169E1", label: "PostgreSQL" },
+      { Icon: SiMongodb, color: "#47A248", label: "MongoDB" },
+      { Icon: SiRedis, color: "#DC382D", label: "Redis" },
+      { Icon: SiDocker, color: "#2496ED", label: "Docker" },
+    ],
+  },
+  {
+    bg: "bg-[#f0f4ff] dark:bg-slate-800/40",
+    accentText: "text-blue-600 dark:text-blue-400",
+    stat: { value: "50+", label: "Apps Published" },
+    icons: [
+      { Icon: SiReact, color: "#61DAFB", label: "React Native" },
+      { Icon: SiFlutter, color: "#02569B", label: "Flutter" },
+      { Icon: SiSwift, color: "#F05138", label: "Swift" },
+      { Icon: SiKotlin, color: "#7F52FF", label: "Kotlin" },
+      { Icon: SiApple, color: "#999999", label: "iOS" },
+      { Icon: SiAndroid, color: "#3DDC84", label: "Android" },
+      { Icon: SiFirebase, color: "#FFCA28", label: "Firebase" },
+      { Icon: SiSqlite, color: "#003B57", label: "SQLite" },
+    ],
+  },
+  {
+    bg: "bg-[#fef0f0] dark:bg-rose-900/20",
+    accentText: "text-rose-600 dark:text-rose-400",
+    stat: { value: "99.9%", label: "Bug Detection Rate" },
+    icons: [
+      { Icon: SiCypress, color: "#17202C", label: "Cypress" },
+      { Icon: SiSelenium, color: "#43B02A", label: "Selenium" },
+      { Icon: SiAppium, color: "#660066", label: "Appium" },
+      { Icon: SiJest, color: "#C21325", label: "Jest" },
+      { Icon: SiPostman, color: "#FF6C37", label: "Postman" },
+      { Icon: SiApachejmeter, color: "#D24939", label: "JMeter" },
+      { Icon: SiGrafana, color: "#F46800", label: "Grafana" },
+    ],
+  },
+  {
+    bg: "bg-[#f0f9ff] dark:bg-sky-900/20",
+    accentText: "text-sky-600 dark:text-sky-400",
+    stat: { value: "99.99%", label: "Uptime SLA" },
+    icons: [
+      { Icon: LiaAmazon, color: "#FF9900", label: "AWS" },
+      { Icon: VscAzure, color: "#0078D4", label: "Azure" },
+      { Icon: SiGooglecloud, color: "#4285F4", label: "GCP" },
+      { Icon: SiKubernetes, color: "#326CE5", label: "Kubernetes" },
+      { Icon: SiTerraform, color: "#844FBA", label: "Terraform" },
+      { Icon: SiGithubactions, color: "#2088FF", label: "GH Actions" },
+      { Icon: SiDocker, color: "#2496ED", label: "Docker" },
+      { Icon: SiGit, color: "#F05032", label: "Git" },
+    ],
+  },
+  {
+    bg: "bg-[#f5f0ff] dark:bg-violet-900/20",
+    accentText: "text-violet-600 dark:text-violet-400",
+    stat: { value: "0", label: "Known Breaches" },
+    icons: [
+      { Icon: SiKalilinux, color: "#557C94", label: "Kali Linux" },
+      { Icon: SiBurpsuite, color: "#FF6633", label: "Burp Suite" },
+      { Icon: SiOwasp, color: "#000000", label: "OWASP" },
+      { Icon: SiAuth0, color: "#EB5424", label: "Auth0" },
+      { Icon: SiCloudflare, color: "#F38020", label: "Cloudflare" },
+      { Icon: SiVault, color: "#000000", label: "HashiCorp" },
+      { Icon: SiWireguard, color: "#88171A", label: "WireGuard" },
+    ],
+  },
+  {
+    bg: "bg-[#e0e7ff] dark:bg-indigo-900/20",
+    accentText: "text-indigo-600 dark:text-indigo-400",
+    stat: { value: "5M+", label: "Tasks Automated" },
+    icons: [
+      { Icon: SiOpenai, color: "#121212", label: "OpenAI" },
+      { Icon: FaRobot, color: "#0042DA", label: "Typebot" },
+      { Icon: FaCogs, color: "#FF5722", label: "OpenClaw" },
+      { Icon: SiChatwoot, color: "#0042DA", label: "Chatwoot" },
+      { Icon: SiLangchain, color: "#121212", label: "LangChain" },
+      { Icon: SiN8N, color: "#FF6D5A", label: "n8n" },
+      { Icon: SiZapier, color: "#FF4A00", label: "Zapier" }
+    ],
+  }
+];
+
 export const servicesContent = {
   hero: {
     badge: "Our Services",
@@ -369,101 +541,115 @@ export const servicesContent = {
   list: [
     {
       id: "uiux",
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Create stunning, intuitive interfaces that delight users and drive engagement. Our design process focuses on understanding your users and crafting experiences that convert.",
+      icon: FaPalette,
+      title: "Design & Frontend",
+      description: "Create stunning, intuitive interfaces that delight users and drive engagement. Our design process focuses on deep user research and crafting experiences that convert.",
       features: [
-        "User-Centric Design",
-        "Wireframing and Prototyping",
-        "Visual Design",
-        "Interaction Design",
-        "Usability Testing",
-        "Design Systems",
+        "User Journey Mapping & Research",
+        "High-Fidelity Interactive Prototyping",
+        "WCAG Accessibility Compliance",
+        "Design Systems & Component Libraries",
+        "A/B Testing & Usability Analysis",
+        "Responsive & Mobile-First Design",
       ],
     },
     {
       id: "software",
-      icon: Code,
+      icon: FaCode,
       title: "Software Development",
-      description: "Build powerful, scalable software solutions tailored to your unique business requirements. We use modern technologies and best practices to deliver robust applications.",
+      description: "Build powerful, highly scalable software solutions tailored to your unique business logic. We use modern architecture patterns to deliver robust, enterprise-grade applications.",
       features: [
-        "Custom Software Development",
-        "Web Application Development",
-        "API Development & Integration",
-        "Enterprise Solutions",
+        "Custom Full-Stack Development",
+        "Microservices Architecture",
+        "REST & GraphQL API Engineering",
         "Legacy System Modernization",
-        "Cloud-Native Applications",
+        "Cloud-Native Scalability",
+        "Real-Time Data Processing",
       ],
     },
     {
       id: "mobile",
-      icon: Smartphone,
+      icon: FaMobileAlt,
       title: "Mobile App Development",
-      description: "Reach your customers wherever they are with native and cross-platform mobile applications that deliver exceptional user experiences.",
+      description: "Reach your customers wherever they are with native and cross-platform mobile applications that deliver exceptional, fluid hardware-integrated experiences.",
       features: [
-        "iOS Development (Swift)",
-        "Android Development (Kotlin)",
-        "React Native Apps",
-        "Flutter Development",
-        "App Store Optimization",
-        "Mobile App Maintenance",
+        "iOS (Swift) & Android (Kotlin) Native",
+        "React Native & Flutter Cross-Platform",
+        "Offline-First Architecture",
+        "App Store Optimization (ASO)",
+        "IoT & Bluetooth Hardware Integration",
+        "Automated Push Notification Pipelines",
       ],
     },
     {
       id: "qa",
-      icon: Bug,
+      icon: FaBug,
       title: "Quality Assurance",
-      description: "Ensure your software performs flawlessly with comprehensive testing services. We catch bugs before your users do, guaranteeing reliable and high-quality products.",
+      description: "Ensure your software performs flawlessly under pressure. We integrate rigorous automated and manual testing pipelines to catch edge cases before your users do.",
       features: [
-        "Manual Testing",
-        "Functional Testing",
-        "Automation Testing",
-        "Performance Testing",
-        "Security Testing",
-        "Regression Testing",
+        "Automated E2E & Integration Testing",
+        "Performance, Load & Stress Testing",
+        "CI/CD Pipeline QA Integration",
+        "Cross-Browser & Device Compatibility",
+        "Security Vulnerability Scanning",
+        "Comprehensive Regression Testing",
       ],
     },
     {
       id: "devops",
-      icon: Server,
-      title: "DevOps",
-      description: "Accelerate your development cycles and improve deployment reliability with our DevOps expertise. We help you build efficient, automated pipelines.",
+      icon: FaServer,
+      title: "Cloud & DevOps",
+      description: "Accelerate your development cycles and guarantee maximum uptime. We design resilient cloud infrastructures and automated CI/CD pipelines for zero-downtime deployments.",
       features: [
-        "Infrastructure as Code (IaC)",
-        "CI/CD Pipeline Implementation",
-        "Monitoring and Logging",
-        "Cloud Infrastructure Setup",
-        "Container Orchestration",
-        "Site Reliability Engineering",
+        "Infrastructure as Code (Terraform/IaC)",
+        "Automated CI/CD Pipeline Setup",
+        "Docker & Kubernetes Orchestration",
+        "Multi-Cloud & Hybrid Deployments",
+        "Advanced Telemetry & Observability",
+        "Site Reliability Engineering (SRE)",
       ],
     },
     {
       id: "cybersecurity",
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Protect your digital assets with comprehensive security services. We identify vulnerabilities and implement robust security measures to keep your business safe.",
+      icon: FaShieldAlt,
+      title: "Cybersecurity & Compliance",
+      description: "Protect your digital assets with enterprise-grade security protocols. We identify zero-day vulnerabilities and implement strict regulatory compliance frameworks to keep your data locked down.",
       features: [
-        "Penetration Testing",
-        "Red Teaming",
-        "Endpoint Security",
-        "Security Audits",
-        "Compliance Implementation",
-        "Incident Response",
+        "Advanced Penetration Testing & Red Teaming",
+        "SOC2, HIPAA & GDPR Compliance Implementation",
+        "Zero-Trust Network Architecture",
+        "Data Encryption & Key Management (KMS)",
+        "Automated Threat Modeling & Scanning",
+        "24/7 Incident Response Planning",
+      ],
+    },
+    {
+      id: "ai-automation",
+      icon: FaRobot,
+      title: "AI & Automation",
+      description: "Integrate intelligent workflows and custom language models to automate operations and enhance customer engagement. We build tailored AI solutions that supercharge your business efficiency.",
+      features: [
+        "Custom LLM & API Integrations",
+        "Intelligent Chatbots (Typebot & premierpsw)",
+        "Advanced Data Scraping (OpenClaw)",
+        "Automated Business Workflows (n8n, Zapier)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Predictive Analytics & Data Structuring",
       ],
     },
   ]
-}
+};
 
 export const careersContent = {
   hero: {
-    badge: "Careers at IgnixTech",
+    badge: "Careers at Ignixtech",
     heading1: "Build the Future",
     heading2: " With Us",
     description: "Join a team of passionate innovators dedicated to creating impactful digital solutions. We are always looking for talented individuals who share our vision."
   },
   culture: {
     badge: "Our Culture",
-    title: "Why Join IgnixTech?",
+    title: "Why Join Ignixtech?",
     description: "More than just a workplace - we are a community of innovators, creators, and problem-solvers.",
     points: [
       {
@@ -504,9 +690,9 @@ export const careersContent = {
         description: "Work when you are most productive with flexible scheduling.",
       },
       {
-        icon: Laptop,
-        title: "Remote Work",
-        description: "Work from anywhere with our remote-first culture.",
+        icon: Users2,
+        title: "Client Collaboration",
+        description: "Develop strong communication and teamwork skills through direct client engagement.",
       },
       {
         icon: GraduationCap,
